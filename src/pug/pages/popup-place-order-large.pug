@@ -26,7 +26,12 @@ block content
 							.form-item
 								input.form-input.phone(type="email" placeholder="Email")
 								span.form-input-state
-							
+							.form-item-group
+								label.fileUpload-label
+									input.form-input.fileUploadInput(type="file")
+									span.label-txt Добавить файл
+									span.form-input-state
+								p *Файл должен быть не более 10 мб
 							//===== btn-group =====
 							.form-btn-group
 								button.btn-primary(type="submit")

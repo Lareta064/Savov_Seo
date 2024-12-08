@@ -30,6 +30,12 @@ block variables
 							input.form-input(type="text" placeholder="Имя")
 							span.form-input-state
 			
+					.form-item-group
+						label.form-item.fileUpload-label
+							input.form-input.fileUploadInput(type="file")
+							| Добавить файл
+							span.form-input-state
+						p *Файл должен быть не более 10 мб
 					
 					h3 Атрибут disabled  задает кнопке темный цвет фона. Если его удалить, кнопка станет оранжевая
 					br
@@ -64,6 +70,8 @@ block variables
 							button.btn-primary(type="submit")
 								span Отправить
 							p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+			
+			
 			
 			
 			script.

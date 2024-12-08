@@ -53,4 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 	});
+    const fileInputs = document.querySelectorAll(".fileUploadInput");
+
+    fileInputs.forEach((input) => {
+        input.addEventListener("change", (event) => {
+            const label = input.closest(".fileUpload-label");
+            const labelTxt = label.querySelector(".label-txt");
+            const stateCheck = label.querySelector(".form-input-state");
+            const fileName = input.files[0]?.name || "Добавить файл"; // Название файла или текст по умолчанию
+
+            labelTxt.textContent = fileName; // Обновляем текст в span.label-txt
+            if (input.files.length > 0) {
+                stateIcon.classList.add("active"); // Файл выбран
+            } else {
+                stateIcon.classList.remove("active"); // Файл удален
+            }
+        });
+    });
 });
