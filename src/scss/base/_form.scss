@@ -107,7 +107,34 @@
 	  border-radius: 12px;
 	}
 }
+*[type="submit"]{font-family: var(--second-family);}
 .form-btn .btn[type]{
 	height: 46px;
 	
+}
+.form-btn-group{
+	display: flex;
+	align-items: center;
+	column-gap:16px;
+	@media (max-width: 767px) {
+	 flex-direction: column;
+	 row-gap:10px;
+	}
+}
+.accept-terms{
+	font-family: var(--second-family);
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 1.25;
+	color: var(--white);
+	a{
+		text-decoration: underline;
+		text-decoration-skip-ink: none;
+		color: #d4deef;
+		&:hover{color: var(--white);}
+	}
+	@media (max-width: 767px) {
+		font-size: 10px;
+		text-align: center;
+	}
 }

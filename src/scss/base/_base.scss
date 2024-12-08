@@ -1,23 +1,11 @@
-@font-face{
-  font-family: 'Inter';
-  src: url("../fonts/Inter-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face{
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+
 
 :root{
   --font-family: #{$ff};
   --second-family:#{$ft};
   --third-family: #{$fs};
   --white: white;
+  --dark: #{$dark};
 }
 * {
 	  box-sizing: border-box;
@@ -141,10 +129,7 @@ main{
   &>main{flex-grow: 1;}
   
 }
-a{
-  transition: .3s;
-  &:hover{color: #A4A6A9;}
-}
+
 
 .container{
   width:min(1830px, 100%);
