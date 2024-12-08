@@ -156,13 +156,18 @@ main{
   padding: 30px;
  }
 }
-.flex, .flex-center,.flex-wrap, .flex-center-wrap,.tags-wrapper,.icon-link{
+.flex, .flex-center,.flex-wrap, .flex-center-wrap,.tags-wrapper,.icon-link,.flex-column{
   display: flex;
   flex-direction:row;
   align-items: center;
   column-gap:18px;
 }
-
+.flex-column{
+  flex-direction: column;
+  row-gap:10px;
+  &>*{width: 100%;}
+}
+.w-100{width: 100%!important;}
 .flex-center, .flex-center-wrap,.tags-wrapper{
   justify-content: center;
 }

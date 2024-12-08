@@ -7,12 +7,14 @@ block content
 		main.inner-main
 			.container
 				button.btn-accent(type="button" data-btn="place-order") Оставить заявку
-		.modal-frame(data-modal="place-order")
+		//===== popUp широкое, достигается за счет доп класса .modal-frame--large ======= 
+		.modal-frame.modal-frame--large(data-modal="place-order")
 			.modal-frame-wrapper
 				.modal-frame-content
 					//====FORM=====
 					.modal-frame-form
 						.modal-title Оставьте заявку
+						.modal-subtitle Мы подготовим предложение и поможем определиться с выбором услуг 
 						//===== FORM =====
 						form.modal-form(action="" method="method")
 							.form-item
@@ -26,9 +28,9 @@ block content
 								span.form-input-state
 							
 							//===== btn-group =====
-							.form-btn-group.flex-column
-								button.btn-primary.w-100(type="submit")
-									span Отправить
+							.form-btn-group
+								button.btn-primary(type="submit")
+									span Отправить заявку
 								p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
 								
 
