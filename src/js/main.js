@@ -46,99 +46,36 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	}
-	toggleActiveClass('catalogy-tags', 'tag')
-	/*====video===========*/
-	const videoBlock = document.querySelector('.video-box');
-	if(videoBlock){
-		const videoBlockContent = videoBlock.querySelector('video');
-		videoBlock.addEventListener('click', ()=>{
-			if(videoBlock.classList.contains('active')){
-				videoBlockContent.pause();
-				videoBlock.classList.remove('active');
-			}else{
-				videoBlockContent.play();
-				videoBlock.classList.add('active');
-			}
-		});
-		videoBlock.addEventListener("ended", function () {
-			videoBlockContent.pause();
-			videoBlock.classList.remove('active');
-		});
-	}
-	/*==== SHOW HIDDEN CARDS =====*/
-	const btnShowMore = document.getElementById('show-more-btn');
-	if(btnShowMore){
-		btnShowMore.addEventListener('click', function() {
-			const parent = document.querySelector('.has-hidden');
-			const hiddenElements = parent.querySelectorAll('.hidden');
-			
-			// Показать по 6 элементов
-			for (let i = 0; i < 6 && i < hiddenElements.length; i++) {
-				hiddenElements[i].classList.remove('hidden');
-			}
+	/*==================FORM ===================*/
+	const formItems = document.querySelectorAll(".form-item");
 
-			// Если больше скрытых элементов нет, скрыть кнопку
-			if (parent.querySelectorAll('.hidden').length === 0) {
-				this.classList.add('hidden');
-			}
-		});
-	}
-	/*===========article-menu============== */
-    const articleContent = document.getElementById('article-content');
-    const articleMenu = document.getElementById('article-menu');
-	
-    if(articleMenu){
-		const headings = articleContent.querySelectorAll('h2');
-		headings.forEach(heading => {
-			const anchorId = heading.id;
-			const menuItem = document.createElement('li');
-			const menuLink = document.createElement('a');
+    if (formItems.length > 0) {
+        for (let item of formItems) {
+            const itemInput = item.querySelector(".form-input");
+            const itemStateIcon = item.querySelector(".form-input-state");
 
-			menuLink.href = `#${anchorId}`;
-			menuLink.textContent = heading.textContent;
+            // Событие потери фокуса для проверки валидности
+            itemInput.addEventListener("blur", () => {
+                const value = itemInput.value.trim();
+				
+                // Проверка, что валидное поле не пустое
+                if (value !== "") {
+                    item.classList.remove("error");
+                    itemStateIcon.classList.add("active");
+                } else {
+                    item.classList.add("error");
+                    itemStateIcon.classList.remove("active");
+                }
+            });
 
-		
-			menuLink.addEventListener('click', function (e) {
-				e.preventDefault(); 
-				updateActiveMenuItemOnClick(menuLink);
-				document.getElementById(anchorId).scrollIntoView({ behavior: 'smooth' }); 
-			});
-
-			menuItem.appendChild(menuLink);
-			articleMenu.appendChild(menuItem);
-			menuItem.classList.add('article-menu-item'); // Добавьте класс для стилей
-		});
-
-		function updateActiveMenuItem() {
-			const scrollPosition = window.scrollY + window.innerHeight * 0.5; // 50% высоты экрана
-			
-			headings.forEach(heading => {
-				const headingOffsetTop = heading.offsetTop;
-				const headingHeight = heading.offsetHeight;
-
-				if (scrollPosition >= headingOffsetTop && scrollPosition < headingOffsetTop + headingHeight) {
-					
-					const activeLink = articleMenu.querySelector(`a[href="#${heading.id}"]`);
-					if (activeLink) {
-						const currentActive = articleMenu.querySelector('a.active');
-						if (currentActive) {
-							currentActive.classList.remove('active');
-						}
-						activeLink.classList.add('active');
-					}
-				}
-			});
-		}
-		function updateActiveMenuItemOnClick(menuLink) {
-			const currentActive = articleMenu.querySelector('a.active');
-			if (currentActive) {
-				currentActive.classList.remove('active');
-			}
-			menuLink.classList.add('active');
-		}
-		window.addEventListener('scroll', updateActiveMenuItem);
-		
-		updateActiveMenuItem();
-	}
-	
+            // Очистка поля по клику на иконку
+            itemStateIcon.addEventListener("click", () => {
+                if (item.classList.contains("error") && itemStateIcon.classList.contains("active")) {
+                    itemInput.value = "";
+                    item.classList.remove("error");
+                    itemStateIcon.classList.remove("active");
+                }
+            });
+        }
+    }
 });

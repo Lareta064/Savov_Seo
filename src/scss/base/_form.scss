@@ -6,7 +6,7 @@
 		height: 37px;
 		font-size: 18px;
 		color: white;
-		font-family: $ft;
+		font-family: var(--second-family);
 		border: none;
 		border-bottom: 1px solid white;
 		background-color: #2B2C2E;
@@ -14,10 +14,18 @@
 		&::placeholder{
 			font-size: 18px;
 			color: white;
-			font-family: $ft;
+			font-family: var(--second-family);
 			@media (max-width: 767px) {
 			font-size: 13px;
 			}
+		}
+	}
+	input.form-input{
+		background-color: transparent;
+		font-size: 22px;
+		&::placeholder{
+			font-size: 18px;
+			@media (max-width: 767px) {font-size: 13px;}
 		}
 	}
 }
@@ -30,7 +38,12 @@
 	display: flex;
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.57812 8.76428L8.76492 16L17.4652 1.5' stroke='%2370BD0B' stroke-width='2' stroke-linecap='round' /%3e%3c/svg%3e");
 	background-size: 19px;
-
+	opacity: 0;
+	z-index: -1;
+	&.active{
+		opacity: 1;
+	    z-index: 2;
+	}
 }
 .error .form-input-state{
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='13' viewBox='0 0 16 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.25821 1.03046L13.7572 11.9696' stroke='%23FF562F' stroke-width='2' stroke-linecap='round' /%3e%3cpath d='M2 11.9072L14 1.09277' stroke='%23FF562F' stroke-width='2' stroke-linecap='round' /%3e%3c/svg%3e");
