@@ -1,0 +1,23 @@
+extends ../layouts/layout-swiper.pug
+
+block content
+	.page-column
+		
+		//==== MAIN =====
+		main.inner-main
+		.modal-frame.modal-frame--order(data-modal="place-order")
+			.modal-frame-wrapper
+				.modal-frame-content
+					.modal-title Оставьте заявку 
+					.modal-subtitle Мы подготовим предложение и поможем определиться с выбором услуг 
+					form.modal-form(action="" method="method")
+						.form-item
+							input.form-input(type="text" placeholder="Имя")
+
+			
+			
+		//==== FOOTER =====
+		include ../sections/_footer.pug
+	
+block variables
+	-var title = "Оформиь заказ";

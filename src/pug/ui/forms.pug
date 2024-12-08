@@ -1,0 +1,42 @@
+include ../layouts/_mixins-links.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard(style="background: #f0f0f0")
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Форма
+				.container-dashboard__content
+					.form-item
+						input.form-input(type="text" placeholder="Имя")
+						span.form-input-state
+					
+					pre.
+						.form-item
+							input.form-input(type="text" placeholder="Имя")
+							span.form-input-state
+					hr
+					br
+					h4 У невалидного input  родительский .form-item получает класс .error. 
+					//== У невалидного input  родительский .form-item получает класс .error, по которму меняется цвет текста на красный и появляется кнопка сброса - крестик. На этот крестик прописан скрипт, который по клику очищает инпут.
+					.form-item.error
+						input.form-input(type="text" placeholder="Имя")
+						span.form-input-state
+					pre.
+						.form-item.error
+							input.form-input(type="text" placeholder="Имя")
+							span.form-input-state

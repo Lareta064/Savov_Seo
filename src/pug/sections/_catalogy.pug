@@ -1,0 +1,122 @@
+section.catalogy
+	.container
+		h2.h2 Лента / Фильтры
+		.catalogy-tags
+			button.tag(type="button") #seo
+			button.tag(type="button") #analytics
+			button.tag(type="button") #ppc
+			button.tag(type="button") #smm
+			button.tag(type="button") #tech
+			button.tag(type="button") #content
+			button.tag(type="button") #serm
+			button.tag(type="button") #email
+			button.tag(type="button") #case
+			button.tag(type="button") #FMCG
+			button.tag(type="button") #business
+			button.tag.active(type="button") #performance
+			button.tag(type="button") #Marketplaces
+			button.tag(type="button") #Reputation|
+			button.tag(type="button") все
+			button.tag(type="button") #imba
+			button.tag(type="button") #ecommerce
+
+		//======cards wrapper ===
+		.catalogy-content.grid-three-columns.has-hidden
+			+card
+			+card
+			+card
+			//============== VIDEO============
+			.large-card
+				.video-box
+					button.btn-play
+					.video-poster
+						img(src="./img/poster.webp", srcset="./img/poster@2x.webp 2x" width="1028" height="622" alt="img")
+					
+					video.video.lazy( muted autoplay playsinline)
+						source(src="./video/video.mp4", type="video/mp4")
+					.video-box__title
+						.title-45 Про контекстную<br> рекламуза 2 минуты 🔥
+						.tag #Яндекс директ
+			+card
+			+card
+			//=====image-card====
+			a(href="#!").product-card.image-card
+				img(src="./img/special-card.webp", srcset="./img/special-card@2x.webp 2x"  width="473" height="622" alt="img")
+			+card
+			+card
+			+card
+			+card
+			//============== FORM ============
+			.inner-form
+				.flex.inner-form-row
+					.inner-text
+						img(src="./img/bell.webp", srcset="./img/bell@2x.webp 2x" width="141" height="168" alt="")
+						.title-32 Узнавай о выходе новых статей быстрее всех 
+					form.cta-form(action="" method="method")
+						.form-item
+							input(type="text" placeholder="Email")
+						.form-btn
+							input.btn(type="submit" value="Отправить заявку")
+
+			//====CARDS====
+			+card
+			+card
+			+card
+			+card
+			//============== VIDEO============
+			.large-card
+				.video-box
+					button.btn-play
+					.video-poster
+						img(src="./img/poster.webp", srcset="./img/poster@2x.webp 2x" width="1028" height="622" alt="img")
+					video.video( playsinline)
+						source(src="./video/video.mp4", type="video/mp4")
+					.video-box__title
+						.title-45 Про контекстную<br> рекламуза 2 минуты 🔥
+						.tag #Яндекс директ
+		
+			+card
+			+card
+			//==== CTA CARD ====
+			.product-card.cta-card
+				.cta-card__title Наши специалисты могут вам помочь?
+				img(src="./img/rocket.webp", srcset="./img/rocket@2x.webp 2x" width="199" height="180" alt="img")
+				a(href="#!").btn Подать заявку
+			
+			+card
+			+card
+			+card3
+			+card3
+			+card3
+			+card3
+			+card3
+			+card3
+			+card3
+			+card3
+		
+		.catalogy-bottom.flex
+			button(type="button").btn#show-more-btn
+				span Показать больше 
+				svg.svg-arrow-down
+					use(href='./img/sprite.svg#svg-arrow-down')
+			
+			ul.pagination
+				li.pagination-prev.pagination-item
+					a(href="#!") 
+						span Прошлая
+				li.pagination-item
+					a(href="#!") 1
+						
+				li.pagination-item.active
+					a(href="#!") 2
+						
+				li.pagination-item
+					a(href="#!") 3
+				li.pagination-item.pagination-dot
+					a(href="#!")
+						span
+				li.pagination-item
+					a(href="#!") 10		
+				li.pagination-next.pagination-item
+					a(href="#!")
+						span Следующая

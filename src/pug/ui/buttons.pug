@@ -1,0 +1,80 @@
+include ../layouts/_mixins-links.pug
+include ../layouts/layout-ui.pug
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+		//====убрать синий цвет у ссылок в сафари ========
+		meta(name="format-detection" content="telephone=no")
+		link(rel="stylesheet", href="../css/main.css")
+		title UI-KIT
+
+	body.body-dashboard
+
+		include ui-navigation.pug
+
+		block content
+			.container-dashboard
+				h2 Кнопки
+
+				.container-dashboard__content
+					button(type="button").btn Кнопка
+					pre.
+						button(type="button").btn Кнопка
+					hr
+					div
+						button(type="button").tag.tag-slim Кнопка
+					pre.
+						button(type="button").tag.tag-slim Кнопка			
+					hr
+					br
+					div(style="padding:20px; background: #eee;")
+						button(type="button").btn-black Кнопка
+					pre.
+						button(type="button").btn-black Кнопка
+					
+					hr
+					br
+					div(style="padding:20px; background: #eee;")
+						button(type="button").btn-black-64 Кнопка высотой 64px
+					pre.
+						button(type="button").btn-black-64 Кнопка высотой 64px
+					hr
+					br
+					button(type="button").tag.tag--mini Кнопка
+					pre.
+						button(type="button").tag.tag--mini Кнопка
+						
+					hr
+					br
+					button(type="button").tag.tag--mini.tag--grey Кнопка
+					pre.
+						button(type="button").tag.tag--mini.tag--grey Кнопка
+					hr
+					br
+					div(style="paddin: 15px; background-color: #eee;")
+						button(type="button").btn-outline Кнопка
+					pre.
+						button(type="button").btn-outline Кнопка
+					hr
+					br
+					button.btn-grey Кнопка серая высотой 52пикс  без бордера 
+					pre.
+						button.btn-grey Кнопка серая высотой 52пикс  без бордера 
+					hr
+					br
+					button.btn-play
+					pre.
+						button.btn-play
+					hr
+					br
+					.btn-accent Заявка
+					pre.
+						.btn-accent Заявка
+
+					

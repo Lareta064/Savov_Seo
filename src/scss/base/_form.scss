@@ -1,0 +1,100 @@
+.form-item{
+	position: relative;
+	input{
+		display: block;
+		width: 100%;
+		height: 37px;
+		font-size: 18px;
+		color: white;
+		font-family: $ft;
+		border: none;
+		border-bottom: 1px solid white;
+		background-color: #2B2C2E;
+		border-radius: 0;
+		&::placeholder{
+			font-size: 18px;
+			color: white;
+			font-family: $ft;
+			@media (max-width: 767px) {
+			font-size: 13px;
+			}
+		}
+	}
+}
+.form-input-state{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 37px;
+	height: 37px;
+	display: flex;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.57812 8.76428L8.76492 16L17.4652 1.5' stroke='%2370BD0B' stroke-width='2' stroke-linecap='round' /%3e%3c/svg%3e");
+	background-size: 19px;
+
+}
+.error .form-input-state{
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='13' viewBox='0 0 16 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M2.25821 1.03046L13.7572 11.9696' stroke='%23FF562F' stroke-width='2' stroke-linecap='round' /%3e%3cpath d='M2 11.9072L14 1.09277' stroke='%23FF562F' stroke-width='2' stroke-linecap='round' /%3e%3c/svg%3e");
+	cursor: pointer;
+}
+.error input{color: $red!important}
+.inner-form-row{
+	background-color: #2B2C2E;
+	border-radius: 24px;
+	padding: 27px 30px;
+	padding-right: 50px;
+	column-gap:125px;
+	
+	.inner-text{
+		display: flex;
+		align-items: center;
+		column-gap: 25px;
+		justify-content: space-between;
+		flex-grow: 1;
+		max-width: 800px;
+		img{
+			flex-shrink: 0;
+			width: 115px;
+			height: 120px;
+			@media (max-width: 1599px) {
+				width: 93px;
+				height: 110px;
+			}
+			@media (max-width: 1023px) {
+			width: 51px;
+			height: 60px;
+			}
+		}
+		
+	}
+	.cta-form{
+		flex-shrink: 0;
+		width: 42%;
+		.form-item{
+			margin-bottom: 38px;
+		}
+		@media (max-width: 1023px) {
+			.form-item{margin-bottom: 20px;}
+			width: 100%;
+			max-width: 500px;
+		}
+		.btn{display: flex; width: 100%;}
+	}
+	@media (max-width: 1199px) {column-gap: 50px;}
+	@media (max-width: 1023px) {
+	  flex-direction: column;
+	  padding:14px;
+	  padding-right: 14px;
+	 
+	 .inner-text{
+		column-gap: 14px;
+		margin-bottom: 10px;
+	 }
+	}
+	@media (max-width: 767px) {
+	  border-radius: 12px;
+	}
+}
+.form-btn .btn[type]{
+	height: 46px;
+	
+}
