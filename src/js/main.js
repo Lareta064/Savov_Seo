@@ -81,9 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 	//SWOW SUCCESS MESSAGE
-	const modalFrames = document.querySelectorAll(".modal-frame-content");
+	const modalFramesContent = document.querySelectorAll(".modal-frame-content");
 
-	modalFrames.forEach((modalFrame) => {
+	modalFramesContent.forEach((modalFrame) => {
 		
 		const formBlock = modalFrame.querySelector(".modal-frame-form");
 		const successBlock = modalFrame.querySelector(".modal-success");
@@ -103,5 +103,50 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		}
 	});
+	/* =============== modal с атрибутом [data-modal] ===============*/ 
+	const modalOpen = document.querySelectorAll('[data-btn]');
+	const modalFrames = document.querySelectorAll('[data-modal]');
+	if( modalFrames.length > 0){
+	//  const modalFramesClose = document.querySelectorAll('[data-close]');
 
+	for(let item of modalOpen){
+		item.addEventListener('click', function(e){
+			for(let item of  modalFrames){
+				item.classList.remove('visible');
+				bodyEl.classList.remove('lock');
+			}
+			e.preventDefault();
+			const itemAttr = item.getAttribute('data-btn');
+
+			for(let frame of modalFrames){
+				const frameAttr =frame.getAttribute('data-modal');	
+				if(frameAttr == itemAttr){
+				frame.classList.add('visible');
+				bodyEl.classList.add('lock');
+				}
+			}
+		});
+	}
+	
+	/*==  закрыть модалки  frame-modal по клику на крестик ======*/
+	// if(modalFramesClose){
+	// 	for(let item of modalFramesClose){
+	// 		item.addEventListener('click', function(e){
+	// 		e.preventDefault();
+	// 		item.closest('[data-modal]').classList.remove('visible');
+	// 		bodyEl.classList.remove('lock');
+	// 		});
+	// 	}
+	// }
+	
+	/*=============== закрыть модалки по клику вне ===============*/
+		for(let frame of modalFrames){
+			frame.addEventListener('click', function(e){
+				if(e.target === e.currentTarget){
+					this.classList.remove(`visible`);
+					bodyEl.classList.remove('lock');
+				}
+			});
+		}
+	}
 });
