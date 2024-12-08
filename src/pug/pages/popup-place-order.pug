@@ -8,17 +8,28 @@ block content
 		.modal-frame.modal-frame--order(data-modal="place-order")
 			.modal-frame-wrapper
 				.modal-frame-content
-					.modal-title Оставьте заявку 
-					.modal-subtitle Мы подготовим предложение и поможем определиться с выбором услуг 
-					form.modal-form(action="" method="method")
-						.form-item
-							input.form-input(type="text" placeholder="Имя")
-							span.form-input-state
-						.form-item
-							input.form-input.phone(type="tel" placeholder="+7(  )")
-							span.form-input-state
+					//====FORM=====
+					.modal-frame-form
+						.modal-title Оставьте заявку 
+						.modal-subtitle Мы подготовим предложение и поможем определиться с выбором услуг 
+						form.modal-form(action="" method="method")
+							.form-item
+								input.form-input(type="text" placeholder="Имя")
+								span.form-input-state
+							.form-item
+								input.form-input.phone(type="tel" placeholder="+7 (     )")
+								span.form-input-state
+							
+							.form-btn-group
+								button.btn-primary(type="submit")
+									span Отправить
+								p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+								
 
-			
+					//====SUCCESS MESSAGE=====
+					.modal-success
+						p Сообщение успешно отправлено!|
+						p Скоро с вами свяжуться наши специалисты 🤍
 			
 		//==== FOOTER =====
 		include ../sections/_footer.pug
