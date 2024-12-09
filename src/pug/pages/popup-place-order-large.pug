@@ -26,17 +26,20 @@ block content
 							.form-item
 								input.form-input.phone(type="email" placeholder="Email")
 								span.form-input-state
-							.form-item-group
-								label.fileUpload-label
+							.fileUpload-group
+								label.fileUpload-label.error
 									input.form-input.fileUploadInput(type="file")
-									span.label-txt Добавить файл
+									span.fileUpload-name Добавить файл
 									span.form-input-state
-								p *Файл должен быть не более 10 мб
+								p.fileUpload-limit *Файл должен быть не более 10 мб
+							.form-link
+								a.btn-light Заполнить бриф
+							
 							//===== btn-group =====
 							.form-btn-group
 								button.btn-primary(type="submit")
 									span Отправить заявку
-								p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+								p.accept-terms  Нажав на кнопку, соглашаюсь на обработку #[a(href="#!") персональных данных]
 								
 
 					//====SUCCESS MESSAGE=====

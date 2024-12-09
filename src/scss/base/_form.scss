@@ -16,13 +16,13 @@
 			color: white;
 			font-family: var(--second-family);
 			@media (max-width: 767px) {
-			font-size: 13px;
+			font-size: 16px;
 			}
 		}
 	}
 	input.form-input{
 		background-color: transparent;
-		font-size: 22px;
+		
 		font-weight: 600;
 		&::placeholder{
 			font-size: 18px;
@@ -35,27 +35,71 @@
 		}
 	}
 }
-.form-item-group{
+.fileUpload-group{
 	display: flex;
 	column-gap: 10px;
-}
-.fileUpload-label{
-	position: relative;
-	height: 52px;
-	border-radius: 50px;
-	padding-inline: 40px 60px;
-	font-size: 20px;
-	background-color: blue;
-	color: white;
-	text-align: center;
-	display: flex;
 	align-items: center;
+
+	.fileUpload-label{
+		position: relative;
+		height: 37px;
+		border-radius: 50px;
+		padding-inline: 40px;
+		font-size: 14px;
+		font-weight: 400;
+		font-family: var(--second-family);
+		background-color:  #d4deef;
+		
+		color: #302f2f;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+		&.label-change{
+			border: 1px solid #d4deef;
+			background-color: transparent;
+			.fileUpload-name{color: #d4deef;}
+		}
+	}
 	.fileUploadInput{
 		border:0;
 		background-color: transparent;
 		height: auto;
 		width: 0.01em;
 		height: 0.01em;
+	}
+	.form-input-state{
+		height: 37px;
+		pointer-events: none;
+	}
+	.error .form-input-state{
+		pointer-events: all;
+	}
+	.fileUpload-name{
+		max-width: 150px;
+		font-weight: 600;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	.fileUpload-limit{
+		font-size: 14px;
+		line-height: 1.43;
+		font-family: var(--second-family);
+		font-weight: 400;
+		color: #d4deef;
+		max-width: 150px;
+
+	}
+	@media (max-width: 767px) {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		row-gap:10px;
+		.fileUpload-limit{
+			font-size: 10px;
+		}
 	}
 }
 .form-input-state{
@@ -148,6 +192,8 @@
 	margin-top: 50px;
 	@media (max-width: 767px) {
 	 margin-top: 30px;
+	 flex-direction: column;
+	 row-gap:10px;
 	}
 }
 .accept-terms{
@@ -160,6 +206,7 @@
 		text-decoration: underline;
 		text-decoration-skip-ink: none;
 		color: #d4deef;
+		display: inline;
 		&:hover{color: var(--white);}
 	}
 	@media (max-width: 767px) {

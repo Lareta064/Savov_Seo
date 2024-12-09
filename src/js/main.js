@@ -82,27 +82,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	//SWOW SUCCESS MESSAGE
 	const modalFramesContent = document.querySelectorAll(".modal-frame-content");
+	if(modalFramesContent.length>0){
+		modalFramesContent.forEach((modalFrame) => {
+			
+			const formBlock = modalFrame.querySelector(".modal-frame-form");
+			const successBlock = modalFrame.querySelector(".modal-success");
+			const submitButton = formBlock?.querySelector("[type='submit']");
 
-	modalFramesContent.forEach((modalFrame) => {
-		
-		const formBlock = modalFrame.querySelector(".modal-frame-form");
-		const successBlock = modalFrame.querySelector(".modal-success");
-		const submitButton = formBlock?.querySelector("[type='submit']");
-
-		if (submitButton) {
-			submitButton.addEventListener("click", (event) => {
-				event.preventDefault(); // Отключаем стандартное поведение кнопки submit
-				console.log('555');
-				
-				if (successBlock) {
-					successBlock.classList.add("show-block");
-				}
-				if (formBlock) {
-					formBlock.classList.add("hide-block");
-				}
-			});
-		}
-	});
+			if (submitButton) {
+				submitButton.addEventListener("click", (event) => {
+					event.preventDefault(); // Отключаем стандартное поведение кнопки submit
+					console.log('555');
+					
+					if (successBlock) {
+						successBlock.classList.add("show-block");
+					}
+					if (formBlock) {
+						formBlock.classList.add("hide-block");
+					}
+				});
+			}
+		});
+	}
 	/* =============== modal с атрибутом [data-modal] ===============*/ 
 	const modalOpen = document.querySelectorAll('[data-btn]');
 	const modalFrames = document.querySelectorAll('[data-modal]');
@@ -149,21 +150,58 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		}
 	}
+	
+	
 	const fileInputs = document.querySelectorAll(".fileUploadInput");
+	if(fileInputs){
+		fileInputs.forEach((input) => {
+			input.addEventListener("change", (event) => {
+				const label = input.closest(".fileUpload-label");
+				const labelTxt = label.querySelector(".fileUpload-name");
+				const stateIcon = label.querySelector(".form-input-state");
 
-    fileInputs.forEach((input) => {
-        input.addEventListener("change", (event) => {
-            const label = input.closest(".fileUpload-label");
-            const labelTxt = label.querySelector(".label-txt");
-			const  stateIcon = label.querySelector(".form-input-state");
-            const fileName = input.files[0]?.name || "Добавить файл"; // Название файла или текст по умолчанию
+				// Получаем файл и его размер
+				const file = input.files[0];
+				const fileName = file?.name || "Добавить файл";
 
-            labelTxt.textContent = fileName; // Обновляем текст в span.label-txt
-			if (input.files.length > 0) {
-                stateIcon.classList.add("active"); // Файл выбран
-            } else {
-                stateIcon.classList.remove("active"); // Файл удален
-            }
-        });
-    });
+				if (file) {
+					const fileSizeMB = file.size / (1024 * 1024); // Размер файла в МБ
+
+					if (fileSizeMB > 10) {
+						// Если файл больше 10 МБ, добавляем класс error
+						label.classList.add("error");
+						labelTxt.textContent = "Файл больше 10Мб!";
+						stateIcon.classList.add("active");
+					} else {
+						// Если файл соответствует требованиям
+						label.classList.remove("error");
+						labelTxt.textContent = fileName; // Отображаем имя файла
+						stateIcon.classList.add("active");
+						label.classList.add("label-change");
+					}
+				} else {
+					// Если файл удален или не выбран
+					clearFile(label, labelTxt, stateIcon, input);
+				}
+			});
+
+			// Обработчик клика на иконку внутри label с ошибкой
+			const label = input.closest(".fileUpload-label");
+			const stateIcon = label.querySelector(".form-input-state");
+
+			stateIcon.addEventListener("click", () => {
+				if (label.classList.contains("error")) {
+					clearFile(label, label.querySelector(".fileUpload-name"), stateIcon, input);
+				}
+			});
+		});
+
+		// Функция очистки файла
+		function clearFile(label, labelTxt, stateIcon, input) {
+			input.value = ""; // Очищаем input
+			label.classList.remove("error", "label-change"); // Удаляем классы
+			stateIcon.classList.remove("active"); // Удаляем active у иконки
+			labelTxt.textContent = "Добавить файл"; // Возвращаем текст по умолчанию
+		}
+	}
 });

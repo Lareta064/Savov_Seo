@@ -30,12 +30,12 @@ block variables
 							input.form-input(type="text" placeholder="Имя")
 							span.form-input-state
 			
-					.form-item-group
+					.fileUpload-group
 						label.form-item.fileUpload-label
 							input.form-input.fileUploadInput(type="file")
 							| Добавить файл
-							span.form-input-state
-						p *Файл должен быть не более 10 мб
+							button(type="reset").form-input-state
+						p.fileUpload-limit *Файл должен быть не более 20 мб
 					
 					h3 Атрибут disabled  задает кнопке темный цвет фона. Если его удалить, кнопка станет оранжевая
 					br
@@ -55,21 +55,21 @@ block variables
 					.form-btn-group
 						button.btn-primary(type="submit")
 							span Отправить
-						p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+						p.accept-terms  Нажав на кнопку, соглашаюсь на обработку #[a(href="#!") персональных данных]
 					pre.
 						.form-btn-group
 							button.btn-primary(type="submit")
 								span Отправить
-							p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+							p.accept-terms  Нажав на кнопку, соглашаюсь на обработку #[a(href="#!") персональных данных]
 					.form-btn-group.flex-column
 						button.btn-primary(type="submit")
 							span Отправить
-						p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+						p.accept-terms  Нажав на кнопку, соглашаюсь на обработку #[a(href="#!") персональных данных]
 					pre.
 						.form-btn-group.flex-column
 							button.btn-primary(type="submit")
 								span Отправить
-							p.accept-terms  Нажав на кнопку, соглашаюсь на обработку персональных данных
+							p.accept-terms  Нажав на кнопку, соглашаюсь на обработку #[a(href="#!") персональных данных]
 			
 			
 			

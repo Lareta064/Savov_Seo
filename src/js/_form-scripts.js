@@ -58,15 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
     fileInputs.forEach((input) => {
         input.addEventListener("change", (event) => {
             const label = input.closest(".fileUpload-label");
-            const labelTxt = label.querySelector(".label-txt");
+            const labelTxt = label.querySelector(".fileUpload-name");
             const stateCheck = label.querySelector(".form-input-state");
             const fileName = input.files[0]?.name || "Добавить файл"; // Название файла или текст по умолчанию
 
-            labelTxt.textContent = fileName; // Обновляем текст в span.label-txt
+            labelTxt.textContent = fileName; // Обновляем текст в span.fileUpload-name
             if (input.files.length > 0) {
                 stateIcon.classList.add("active"); // Файл выбран
+                label.classList.add("label-change");
             } else {
                 stateIcon.classList.remove("active"); // Файл удален
+                label.classList.add("remove-change");
             }
         });
     });

@@ -17,6 +17,11 @@
 	width: fit-content;
 	@media (max-width: 1439px) {
 		height: 50px;
+		font-size: 18px;
+	}
+	@media (max-width: 767px) {
+	height: 46px;
+	font-size: 16px;
 	}
 }
 .btn-light,.btn-blue{
@@ -46,15 +51,14 @@
 }
 form{
  	.btn-dark, .btn-dark[type="submit"]{
-		font-family: var(--second-family);
+		font-weight: 400;
 	
 	}
 }
-*.h-52{
-	height: 52px;
-	font-weight: 700;
-	
+*.h-50{
+	height: 50px;
 }
+
 .btn-play{
 	width: 126px;
 	height: 126px;
@@ -79,4 +83,35 @@ form{
 	background-color: var(--dark);
 	border:0;
 }
+.button {
+    background: #ff562f; /* Изначальный цвет */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Плавный переход между фоном */
+    background: linear-gradient(151deg, #ff562f 0%, #ffb9a8 100%);
+    background-size: 200% 200%; /* Увеличиваем фон для эффекта движения */
+    background-position: 0% 50%; /* Начальная позиция */
+    animation: none; /* По умолчанию анимации нет */
+	&:after{
+		
+	}
+}
 
+/* Ховер-эффект */
+.button:hover {
+    animation: gradientMove 1.6s ease-in-out infinite alternate; /* Анимация переключения */
+}
+
+/* Ключевые кадры для анимации */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%; /* Начальная позиция */
+    }
+    100% {
+        background-position: 100% 50%; /* Конечная позиция */
+    }
+}
