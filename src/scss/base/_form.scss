@@ -1,3 +1,4 @@
+@use "var" as *;
 .form-item{
 	position: relative;
 	input{
@@ -35,32 +36,41 @@
 		}
 	}
 }
+.round-btn{
+	position: relative;
+	height: 37px;
+	border-radius: 50px;
+	padding-inline: 40px;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: var(--second-family);
+	background-color:  #d4deef;
+	width: fit-content;
+	color: #302f2f;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	&.round-btn--change{
+			border: 1px solid #d4deef;
+			background-color: transparent;
+			// .fileUpload-name{color: #d4deef;}
+			.round-btn__name{font-weight: 600;color: #d4deef;}
+		}
+}
+.brif-btn{
+	@media (max-width: 767px) {
+	margin-left: auto;
+	margin-right: auto;
+	
+	}
+}
 .fileUpload-group{
 	display: flex;
 	column-gap: 10px;
 	align-items: center;
 
-	.fileUpload-label{
-		position: relative;
-		height: 37px;
-		border-radius: 50px;
-		padding-inline: 40px;
-		font-size: 14px;
-		font-weight: 400;
-		font-family: var(--second-family);
-		background-color:  #d4deef;
-		
-		color: #302f2f;
-		text-align: center;
-		display: flex;
-		align-items: center;
-		flex-shrink: 0;
-		&.label-change{
-			border: 1px solid #d4deef;
-			background-color: transparent;
-			.fileUpload-name{color: #d4deef;}
-		}
-	}
+	
 	.fileUploadInput{
 		border:0;
 		background-color: transparent;
@@ -189,9 +199,9 @@
 	display: flex;
 	align-items: center;
 	column-gap:16px;
-	margin-top: 50px;
+	margin-top: 20px;
 	@media (max-width: 767px) {
-	 margin-top: 30px;
+	 margin-top: 10px;
 	 flex-direction: column;
 	 row-gap:10px;
 	}
@@ -212,5 +222,14 @@
 	@media (max-width: 767px) {
 		font-size: 10px;
 		text-align: center;
+	}
+}
+*.grid-form{
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap:30px;
+	&>.form-item{margin-bottom: 0!important;}
+	@media (max-width: 767px) {
+		row-gap:25px;
 	}
 }

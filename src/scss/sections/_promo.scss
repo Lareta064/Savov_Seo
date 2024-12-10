@@ -1,3 +1,4 @@
+@use "base/var" as *;
 .main .promo +* {
 	
 	padding-top: 40px;
@@ -102,7 +103,7 @@
 	z-index: 2;
 	.bold-20{
 		line-height: 1.8;
-		font-family: $ff;
+		font-family: var(--font-family);
 		@media (max-width: 1439px) {
 			font-size: 14px;
 			font-family: 'General Sans Variable';
@@ -110,7 +111,7 @@
 	}
 	.tag{
 		font-size: 14px;
-		font-family: $ff;
+		font-family: var(--font-family);
 		padding-left: 34px;
 		padding-right: 34px;
 	}

@@ -1,30 +1,26 @@
-@import "base/_var";
-@import "base/_base";
-@import "base/_typography";
-@import "base/_buttons";
-@import "base/_icons";
-// @import "base/_card";
-@import "base/_form";
-@import "base/_swiper-slider.scss";
+@use "base/var";
+@use "base/_base";
+@use "base/_typography";
+@use "base/_buttons";
+@use "base/_icons";
 
+@use "base/_form";
+@use "base/_swiper-slider.scss";
 
-@import "blocks/_gamburger.scss";
-@import "sections/header";
-@import "blocks/_main-menu.scss";
-@import "blocks/_modal.scss";
+@use "blocks/_gamburger.scss";
+@use "sections/header";
+@use "blocks/_main-menu.scss";
+@use "blocks/_modal.scss";
 
-
-@import "sections/_promo";
-// @import "sections/_catalogy";
-@import "sections/_inner-promo";
-// @import "sections/_single-article";
-@import "sections/_promo-seo";
-@import "sections/_our-benefits";
-@import "sections/_seo-map";
+@use "sections/_promo";
+@use "sections/_inner-promo";
+@use "sections/_promo-seo";
+@use "sections/_our-benefits";
+@use "sections/_seo-map";
 
 
 
 
 
-@import "sections/_footer";
-@import "ui/_ui-navigation.scss";
+@use "sections/_footer";
+@use "ui/_ui-navigation.scss";
