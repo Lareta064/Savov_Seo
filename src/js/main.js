@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 	
-	
+	//======= INPUT TYPE="FILE"=====
 	const fileInputs = document.querySelectorAll(".fileUploadInput");
 	if(fileInputs){
 		fileInputs.forEach((input) => {

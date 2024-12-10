@@ -1,7 +1,7 @@
 @use "var" as *;
 
 :root{
-  --font-family: #{var(--font-family)};
+  --font-family: #{$ff};
   --second-family:#{$ft};
   --third-family: #{$fs};
   --white: white;

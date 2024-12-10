@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const browserSync = require("browser-sync").create();
 const watch = require("gulp-watch");
-const sass = require("gulp-sass")(require("sass"));
+const sass = require("gulp-dart-sass");
 const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");
 const notify = require("gulp-notify");
@@ -96,15 +96,24 @@ gulp.task("scss", function () {
         .pipe(browserSync.stream());
 });
 
-// Задача для изображений
-gulp.task("copy:img", function () {
+// Задача для обработки изображений (кроме sprite.svg)
+gulp.task("process:img", function () {
     return gulp
-        .src("./src/img/**/*.*")
+        .src(["./src/img/**/*.*", "!./src/img/sprite.svg"]) // Исключаем sprite.svg
         .pipe(imagemin()) // Оптимизация изображений
         .pipe(webp()) // Преобразование в WebP
         .pipe(gulp.dest("./build/img/"));
 });
 
+// Задача для копирования sprite.svg без изменений
+gulp.task("copy:sprite", function () {
+    return gulp
+        .src("./src/img/sprite.svg")
+        .pipe(gulp.dest("./build/img/"));
+});
+
+// Объединённая задача для обработки всех изображений
+gulp.task("copy:img", gulp.parallel("process:img", "copy:sprite"));
 // Задачи для копирования других файлов
 gulp.task("copy:libs", function () {
     return gulp.src("./src/libs/**/*.*").pipe(gulp.dest("./build/libs/"));

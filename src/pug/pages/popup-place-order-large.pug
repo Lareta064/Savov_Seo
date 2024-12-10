@@ -7,6 +7,7 @@ block content
 		main.inner-main
 			.container
 				button.btn-accent(type="button" data-btn="place-order") Оставить заявку
+		
 		//===== popUp широкое, достигается за счет доп класса .modal-frame--large ======= 
 		.modal-frame.modal-frame--large(data-modal="place-order")
 			.modal-frame-wrapper
@@ -26,6 +27,7 @@ block content
 							.form-item
 								input.form-input.phone(type="email" placeholder="Email")
 								span.form-input-state
+							//==== инпут загрузки файла с компьютера====
 							.fileUpload-group
 								label.fileUpload-label.round-btn.error
 									input.form-input.fileUploadInput(type="file")
