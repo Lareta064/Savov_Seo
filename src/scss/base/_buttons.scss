@@ -15,6 +15,7 @@
 	flex-shrink: 0;
 	transition: .3s; 
 	width: fit-content;
+	overflow: hidden;
 	@media (max-width: 1439px) {
 		height: 50px;
 		font-size: 18px;
@@ -83,35 +84,58 @@ form{
 	background-color: var(--dark);
 	border:0;
 }
-.button {
-    background: #ff562f; /* Изначальный цвет */
-    color: white;
-    border: none;
+.btn-primary--animate {
+    position: relative;
+    display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    
     cursor: pointer;
-    transition: background 0.3s ease; /* Плавный переход между фоном */
-    background: linear-gradient(151deg, #ff562f 0%, #ffb9a8 100%);
-    background-size: 200% 200%; /* Увеличиваем фон для эффекта движения */
-    background-position: 0% 50%; /* Начальная позиция */
-    animation: none; /* По умолчанию анимации нет */
-	&:after{
-		
+    overflow: hidden;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50' preserveAspectRatio='none'%3e%3clinearGradient id='start' x1='0' y1='0' x2='1' y2='0'%3e%3cstop offset='0%25' stop-color='%23ff562f' /%3e%3cstop offset='100%25' stop-color='%23ff562f' /%3e%3c/linearGradient%3e%3crect width='100' height='50' fill='url(%23start)' /%3e%3c/svg%3e");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.8s ease-in-out;
+	span{
+		position: relative;
+		z-index: 2;
+	}
+	&:before{
+		// content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #ff562f;
+		z-index: 1; 
+		opacity: 1;
+		transition: .8s; 
 	}
 }
 
-/* Ховер-эффект */
-.button:hover {
-    animation: gradientMove 1.6s ease-in-out infinite alternate; /* Анимация переключения */
+.btn-primary--animate:hover:before {
+	
+	opacity:0 ;
 }
-
-/* Ключевые кадры для анимации */
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%; /* Начальная позиция */
+.btn-primary--animate:hover{
+	animation: gradientMoveRed 1.6s linear infinite alternate;
+}
+@keyframes gradientMoveRed {
+	0%{
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50' preserveAspectRatio='none'%3e%3clinearGradient id='start' x1='0' y1='0' x2='1' y2='0'%3e%3cstop offset='0%25' stop-color='%23ff562f' /%3e%3cstop offset='100%25' stop-color='%23ff562f' /%3e%3c/linearGradient%3e%3crect width='100' height='50' fill='url(%23start)' /%3e%3c/svg%3e");
+	}
+    33% {
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50' preserveAspectRatio='none'%3e%3clinearGradient id='start' x1='0' y1='0' x2='1' y2='0'%3e%3cstop offset='0%25' stop-color='%23ff562f' /%3e%3cstop offset='100%25' stop-color='%23ffb9a8' /%3e%3c/linearGradient%3e%3crect width='100' height='50' fill='url(%23start)' /%3e%3c/svg%3e");
     }
-    100% {
-        background-position: 100% 50%; /* Конечная позиция */
+    66% {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50' preserveAspectRatio='none'%3e%3clinearGradient id='end' x1='0' y1='0' x2='1' y2='0'%3e%3cstop offset='0%25' stop-color='%23ffb9a8' /%3e%3cstop offset='100%25' stop-color='%23ff562f' /%3e%3c/linearGradient%3e%3crect width='100' height='50' fill='url(%23end)' /%3e%3c/svg%3e");
     }
+	100%{
+		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50' preserveAspectRatio='none'%3e%3clinearGradient id='start' x1='0' y1='0' x2='1' y2='0'%3e%3cstop offset='0%25' stop-color='%23ff562f' /%3e%3cstop offset='100%25' stop-color='%23ff562f' /%3e%3c/linearGradient%3e%3crect width='100' height='50' fill='url(%23start)' /%3e%3c/svg%3e");
+	}
 }
