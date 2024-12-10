@@ -113,9 +113,9 @@ main{
   }
 }
 .inner-main{
-  row-gap: 110px;
-  @media (max-width: 1199px) {
-    row-gap: 90px;
+  row-gap: 140px;
+  @media (max-width: 1439px) {
+    row-gap: 100px;
   }
   @media (max-width: 767px) {
     row-gap: 60px;

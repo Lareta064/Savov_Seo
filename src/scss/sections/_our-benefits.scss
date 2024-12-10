@@ -1,5 +1,5 @@
 @use "base/var" as *;
-.our-benefits{
+.promo-benefits{
 	margin-top: 37px!important;
 }
 .benefit-card{
@@ -8,12 +8,11 @@
 	display: flex;
 	flex-direction: column;
 	border-radius: 24px;
-	
-	.txt-18{font-family: $ft;}
+	.txt-34{font-family: var(--font-family);}
+	p{font-family:var(--second-family);}
 	.svg-ten{
 		width: 196px;
 		aspect-ratio:196 / 45;
-		
 	}
 	&.benefit-1{
 		background-image: url('../img/ten.svg');
@@ -28,7 +27,14 @@
 		justify-content: flex-end;
 		align-items: flex-end;
 		p{margin-top: 30px;}
-	
+		@media (max-width: 1749px) {
+			font-size: 24px;
+		}
+	    @media (max-width: 1499px) {
+			font-size: 22px;
+			.svg-ten{width: 142px;}
+			p{margin-top: 14px;}
+		}
 	}
 	&.benefit-2{
 		font-size: 40px;
@@ -39,9 +45,15 @@
 		span{
 			color: #525151;
 		}
+		@media (max-width: 1749px){font-size: 34px;}
+		@media (max-width: 1499px){font-size: 28px;}
 		
 	}
 	&.benefit-3{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		row-gap:20px;
 		background-color: #282828;
 		font-size: 18px;
 		font-weight: 400;
@@ -50,15 +62,19 @@
 		.txt-semi{
 			color: rgba(249, 249, 249, 1);
 		}
-		.txt-34{margin-bottom: 20px;}
-		.txt-18{margin-bottom: 30px;}
+		
 		img{
 			width: 195px;
 			margin-left: auto;
 			margin-right: auto;
-			margin-top:30px;
-			margin-bottom: 40px;
-			
+			@media (max-width: 1749px){
+				width: 155px;
+				
+			}
+			@media (max-width: 1499px){
+				width: 135px;
+				
+			}
 		}
 		.btn-grey{
 			white-space: nowrap;
@@ -66,7 +82,14 @@
 			padding-right: 10px;
 			width: 100%;
 		}
-		
+		@media (max-width: 1749px) {
+			font-size: 16px;
+			
+		  }
+		@media (max-width: 1499px) {
+		  font-size: 13px;
+		  padding-block:30px;
+		}
 	}
 	&.benefit-4{
 		width: 100%;
@@ -81,28 +104,61 @@
 			position: absolute;
 			top: -27%;
     		left: 20px;
-			
+			@media (max-width: 1749px) {
+				left: 0;
+				top: -32%;
+			}
 		}
 	}
 	&.benefit-5{
-		.txt-18{margin-top: 20px;}
+		font-size: 18px;
+		padding-bottom: 40px;
+		 display: flex;
+		 flex-direction: column;
+		 row-gap:30px;
 		background-color: #282828;
 		position: relative;
 		img{
 			position: absolute;
 			bottom: 30px;
 			right: 33px;
+			width: 61px;
+
+			@media (max-width: 1499px){
+				bottom: 10px;right: 16px;width:50px;
+			}
+		}
+		@media (max-width: 1749px){
+			font-size: 16px;
+			padding-right: 45px;
+		}
+		@media (max-width: 1499px){
+			font-size: 13px;
+			padding-right: 40px;
 		}
 	}
-	
+	@media (max-width: 1749px){
+		padding: 24px;
+		.txt-34{font-size: 30px;}
+	}
+	@media (max-width: 1499px){
+		padding: 20px;
+		.txt-34{font-size: 24px;}
+	}
 }
 
-.our-benefits-grid{
+.promo-benefits-grid{
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	
 	grid-column-gap: 30px;
 	grid-row-gap: 30px;
+	
+	
+	@media (max-width: 1499px) {
+		grid-column-gap: 18px;
+		grid-row-gap: 18px;
+	}
 	
 }
 
@@ -141,6 +197,12 @@
 		flex-direction: column;
 		padding-bottom: 30px;
 		.txt-34{width: 100%;}
+		@media (max-width: 1749px) {
+			padding-bottom: 20px;
+		}
+		@media (max-width: 1499px) {
+			padding-bottom: 10px;
+		}
 	}
 	.result-slider{
 		width: 526px;
@@ -151,7 +213,9 @@
 			align-items: center;
 		}
 		.progress-card{background-color: #282828;width: 100%;}
-		
+		@media (max-width: 1749px) {
+			width: 360px;
+		}
 	}
 	.result-company{
 		flex-grow:1;
@@ -184,9 +248,15 @@
 			animation-fill-mode: forwards;
 			animation-timing-function: linear;
 		}
-		
+		@media (max-width: 1499px) {
+			padding-left: 12px;
+			.company-card{left: 12px;}
+		   }
 	}
-	
+
+	@media (max-width: 1499px) {
+	 gap:12px;
+	}
 }
 @keyframes opacity{
 	to{opacity: 1;}
@@ -195,6 +265,9 @@
 	padding-top: 30px;
 	padding-bottom: 30px;
 	border-bottom: 1px solid #848282;
+	@media (max-width: 1749px) {
+		padding-bottom: 20px;
+	}
 }
 .progress-line{
 	position: relative;
