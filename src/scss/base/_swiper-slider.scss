@@ -6,4 +6,7 @@
 	&.swiper-pagination-bullet-active{
 		background-color: #D4DEEF;
 	}
+	@media (max-width: 767px) {
+		width: 20px;
+	}
 }
