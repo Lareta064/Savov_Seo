@@ -1,5 +1,7 @@
 .promo.promo--service{
+
 	.promo-banner{margin-top: 55px;padding-top: 40px; padding-bottom: 50px;}
+	
 	.promo-title{
 		width: min(1180px, 100%);
 	}
@@ -9,6 +11,9 @@
 		font-size: 30px;
 		line-height: 1.17;
 		margin-bottom: 30px;
+		@media (max-width: 1199px) {
+			font-size: calc(16px + 30*(100vw - 390px) / 1530);
+		}
 	}
 	.promo-image{
 		width: 355px;
@@ -21,6 +26,14 @@
 		}
 		@media (max-width: 1439px) {
 			transform: translate(-27%, 28%);
+		}
+		@media (max-width: 1199px) {
+		 position: relative;
+		 transform: unset;
+		 inset: auto;
+		 width: 100%;
+		 max-width: 700px;
+		 justify-content: center;
 		}
 	}
 	
