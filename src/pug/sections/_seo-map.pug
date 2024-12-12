@@ -1,9 +1,9 @@
 //========= SEO MAP =======
 section.seo-map
 	.container
-		
-		h2.title  Преимущества SEO - продвижения
-		.title-sub  Почему его заказывают?
+		.title-group
+			h2.title  Преимущества SEO - продвижения
+			.title-sub  Почему его заказывают?
 		//========= seo map======
 		.seo-map-grid
 			.seo-map-content.mouse-parallax
@@ -61,7 +61,6 @@ section.seo-map
 				bg.addEventListener('mousemove', function(e) {
 					let x = e.clientX / window.innerWidth;
 					let y = e.clientY / window.innerHeight; 
-					
 					fog1.style.transform = 'translate(-' + x * 30 + 'px, -' + y * 30 + 'px)';
 					fog2.style.transform = 'translate(+' + x * 50 + 'px, -' + y * 50 + 'px)';
 					fog3.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';

@@ -53,40 +53,35 @@
 	line-height: 1.25;
 	font-weight: 700;
 	color:#d6d6d6;
-	@media (max-width: 1699px) {
-		font-size: 24px;
-	}
-	@media (max-width: 1023px) {
-	 font-size: 16px;
-	}
+	@media (max-width: 1699px) {font-size: 24px;}
+	@media (max-width: 1023px) {font-size: 16px;}
 }
 .title-sub{
 	font-weight: 600;
 	color:#898F99;
 }
+.title-group{
+	margin-bottom: 60px;
+	@media (max-width: 1439px) {margin-bottom: 40px;}
+	@media (max-width: 767px) {margin-bottom: 20px;}
+}
 .h3{
 	font-size: 24px;
 	color: $white;
-	@media (max-width: 1699px) {
-	 font-size: 20px;
-	}
+	@media (max-width: 1699px) {font-size: 20px;}
 }
 .title-45{
 	font-weight: 900;
 	font-size: 45px;
 	color: #d6d6d6;
-	@media (max-width: 1439px) {
-		font-size: 24px;
-	}
+	@media (max-width: 1439px) {font-size: 24px;}
 }
 .title-30{
 	font-size: 30px;
 	font-weight: 900;
 }
 .txt-semi{font-weight: 600;}
-.txt-20,.bold-20, .subtitle{
-	font-size: 20px;
-}
+.txt-20,.bold-20, .subtitle{font-size: 20px;}
 .txt-14{
 	font-size: 14px;
 	
