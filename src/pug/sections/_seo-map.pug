@@ -5,101 +5,93 @@ section.seo-map
 		h2.title  Преимущества SEO - продвижения
 		.title-sub  Почему его заказывают?
 		//========= seo map======
-		
-		.seo-map-content.mouse-parallax
-			//==== список слева ====
-			ul.seo-map-list.seo-map-list--left
-				li.mouse-parallax-1
-					span Traffie monitoring
-				li.mouse-parallax-2 
-					span Content
-				li.mouse-parallax-3 
-					span Strategy
-				li.mouse-parallax-4 
-					span Social networt
-				li.mouse-parallax-5
-					span Feedback
-				li.mouse-parallax-6 
-					span Ranking
-				li.mouse-parallax-7 
-					span links building
-			p.seo-map-title SEO
-			//==== список справа ====
-			ul.seo-map-list.seo-map-list--right
-				li.mouse-parallax-8 
-					span Keyword research
-				li.mouse-parallax-9 
-					span Links building
-				li.mouse-parallax-10 
-					span Softuire development
-				li.mouse-parallax-11 
-					span Sitemap optimization
-				li.mouse-parallax-12 
-					span Web design
-				li.mouse-parallax-13 
-					span Website optimization
-				li.mouse-parallax-14
-					span links building
+		.seo-map-grid
+			.seo-map-content.mouse-parallax
+				//==== список слева ====
+				ul.seo-map-list.seo-map-list--left
+					li.mouse-parallax-1
+						span Traffie monitoring
+					li.mouse-parallax-2 
+						span Content
+					li.mouse-parallax-3 
+						span Strategy
+					li.mouse-parallax-4 
+						span Social networt
+					li.mouse-parallax-5
+						span Feedback
+					li.mouse-parallax-6 
+						span Ranking
+					li.mouse-parallax-7 
+						span links building
+				p.seo-map-title SEO
+				//==== список справа ====
+				ul.seo-map-list.seo-map-list--right
+					li.mouse-parallax-8 
+						span Keyword research
+					li.mouse-parallax-9 
+						span Links building
+					li.mouse-parallax-10 
+						span Softuire development
+					li.mouse-parallax-11 
+						span Sitemap optimization
+					li.mouse-parallax-12 
+						span Web design
+					li.mouse-parallax-13 
+						span Website optimization
+					li.mouse-parallax-14
+						span links building
 
-		script.
-			let bg = document.querySelector('.mouse-parallax');
-			let fog1 = document.querySelector('.mouse-parallax-1');
-			let fog2 = document.querySelector('.mouse-parallax-2');
-			let fog3 = document.querySelector('.mouse-parallax-3');
-			let fog4 = document.querySelector('.mouse-parallax-4');
-			let fog5 = document.querySelector('.mouse-parallax-5');
-			let fog6 = document.querySelector('.mouse-parallax-6');
-			let fog7 = document.querySelector('.mouse-parallax-7');
-			let fog8 = document.querySelector('.mouse-parallax-8');
-			let fog9 = document.querySelector('.mouse-parallax-9');
-			let fog10 = document.querySelector('.mouse-parallax-10');
-			let fog11 = document.querySelector('.mouse-parallax-11');
-			let fog12 = document.querySelector('.mouse-parallax-12');
-			let fog13 = document.querySelector('.mouse-parallax-13');
-			let fog14 = document.querySelector('.mouse-parallax-14');
-			
-			bg.addEventListener('mousemove', function(e) {
-				let x = e.clientX / window.innerWidth;
-				let y = e.clientY / window.innerHeight; 
+			script.
+				let bg = document.querySelector('.mouse-parallax');
+				let fog1 = document.querySelector('.mouse-parallax-1');
+				let fog2 = document.querySelector('.mouse-parallax-2');
+				let fog3 = document.querySelector('.mouse-parallax-3');
+				let fog4 = document.querySelector('.mouse-parallax-4');
+				let fog5 = document.querySelector('.mouse-parallax-5');
+				let fog6 = document.querySelector('.mouse-parallax-6');
+				let fog7 = document.querySelector('.mouse-parallax-7');
+				let fog8 = document.querySelector('.mouse-parallax-8');
+				let fog9 = document.querySelector('.mouse-parallax-9');
+				let fog10 = document.querySelector('.mouse-parallax-10');
+				let fog11 = document.querySelector('.mouse-parallax-11');
+				let fog12 = document.querySelector('.mouse-parallax-12');
+				let fog13 = document.querySelector('.mouse-parallax-13');
+				let fog14 = document.querySelector('.mouse-parallax-14');
 				
-				fog1.style.transform = 'translate(-' + x * 30 + 'px, -' + y * 30 + 'px)';
-				fog2.style.transform = 'translate(+' + x * 50 + 'px, -' + y * 50 + 'px)';
-				fog3.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
-				fog4.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-				fog5.style.transform = 'translate(+' + x * 30 + 'px, -' + y * 30 + 'px)';
-				fog6.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
-				fog7.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
-				fog14.style.transform = 'translate(-' + x * 30 + 'px, -' + y * 30 + 'px)';
-				fog13.style.transform = 'translate(+' + x * 50 + 'px, -' + y * 50 + 'px)';
-				fog12.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
-				fog11.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
-				fog10.style.transform = 'translate(+' + x * 30 + 'px, -' + y * 30 + 'px)';
-				fog9.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
-				fog8.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
+				bg.addEventListener('mousemove', function(e) {
+					let x = e.clientX / window.innerWidth;
+					let y = e.clientY / window.innerHeight; 
+					
+					fog1.style.transform = 'translate(-' + x * 30 + 'px, -' + y * 30 + 'px)';
+					fog2.style.transform = 'translate(+' + x * 50 + 'px, -' + y * 50 + 'px)';
+					fog3.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
+					fog4.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+					fog5.style.transform = 'translate(+' + x * 30 + 'px, -' + y * 30 + 'px)';
+					fog6.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
+					fog7.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
+					fog14.style.transform = 'translate(-' + x * 30 + 'px, -' + y * 30 + 'px)';
+					fog13.style.transform = 'translate(+' + x * 50 + 'px, -' + y * 50 + 'px)';
+					fog12.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
+					fog11.style.transform = 'translate(-' + x * 50 + 'px, -' + y * 50 + 'px)';
+					fog10.style.transform = 'translate(+' + x * 30 + 'px, -' + y * 30 + 'px)';
+					fog9.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
+					fog8.style.transform = 'translate(-' + x * 20 + 'px, -' + y * 20 + 'px)';
 
-			});
+				});
+				
+			//========= seo cards======
+			.info-cards-wrapper.grid-four-col
+				.info-card
+					.info-card__title Самый конверсионный трафик
+					p Пользователи доверяют результатам органической выдачи. Потенциальный клиент не чувствует, что ему что-то HABA3BIBAKOT, BeAb OH CaM opmupoBan con запрос.
+
+				.info-card
+					.info-card__title Результат который остается на долго
+					p В отличие от рекламных каналов, эффект которых исчезает или значительно ослабевает при остановке финансирования, результаты SEO-продвижения продолжают приносить клиентов месяцы и годы после прекращения работ над сайтом.
+				.info-card
+					.info-card__title Самая дешевая стоимость за 1 посетителя
+					p Поисковое продвижение во много раз дешевле рекламы в СМИ, и в большинстве случаев значительно дешевле других видов интернет-рекламы. С ростом посещаемости снижается стоимость привлечения 1 посетителя.
+				.info-card
+					.info-card__title Доверие к бренду
+					p Нахождение сайта на верхних позициях поисковых систем повышает уровень его репутации в глазах целевой аудитории. Это незамедлительно сказывается на росте доверия к компании.
 			
-		//========= seo cards======
-		.info-cards-wrapper.grid-four-col
-			.info-card
-				.info-card__title Самый конверсионный трафик
-				p Пользователи доверяют результатам органической выдачи. Потенциальный клиент не чувствует, что ему что-то HABA3BIBAKOT, BeAb OH CaM opmupoBan con запрос.
-
-			.info-card
-				.info-card__title Результат который остается на долго
-				p В отличие от рекламных каналов, эффект которых исчезает или значительно ослабевает при остановке финансирования, результаты SEO-продвижения продолжают приносить клиентов месяцы и годы после прекращения работ над сайтом.
-			.info-card
-				.info-card__title Самая дешевая стоимость за 1 посетителя
-				p Поисковое продвижение во много раз дешевле рекламы в СМИ, и в большинстве случаев значительно дешевле других видов интернет-рекламы. С ростом посещаемости снижается стоимость привлечения 1 посетителя.
-			.info-card
-				.info-card__title Доверие к бренду
-				p Нахождение сайта на верхних позициях поисковых систем повышает уровень его репутации в глазах целевой аудитории. Это незамедлительно сказывается на росте доверия к компании.
-		.form-item
-			input.form-input(type="text" placeholder="Имя")
-			span.form-input-state
-		.form-item
-			input.form-input(type="tel" placeholder="Телефон")
-			span.form-input-state
-		.form-item
-			input.form-input(type="email" placeholder="Email")
-			span.form-input-state
