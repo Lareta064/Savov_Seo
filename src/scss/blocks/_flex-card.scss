@@ -1,11 +1,7 @@
 .flex-card{
 	display: flex;
 	column-gap: 20px;
-	font-family: var(--second-family);
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 120%;
-	color: #7a7a7a;
+	
 	&__img{
 		height: 70px;
 		width: 70px;
@@ -18,9 +14,7 @@
 			object-fit: cover;
 		}
 	}
-	&__title{
-		font-size: 28px;
-		line-height: 1.53;
+	.card-title{
 		color: #BBBBBB;
 		margin-bottom: 16px;
 		font-family: var(--font-family);

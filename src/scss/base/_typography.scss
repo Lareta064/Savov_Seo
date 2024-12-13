@@ -80,12 +80,33 @@
 	font-size: 30px;
 	font-weight: 900;
 }
+.card-title{
+	font-weight: 600;
+	font-size: 28px;
+	color: #f9f9f9;
+	margin-bottom: 30px;
+	@media (max-width: 1699px) {font-size: 20px; margin-bottom: 11px;}
+	@media (max-width: 1199px) {font-size: 16px; margin-bottom: 10px;}
+}
+.card-text, .card-text p{
+	font-family: var(--second-family);
+
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.2;
+	color: rgba(249, 249, 249, .35);
+	@media (max-width: 1699px) {font-size: 13px;}
+	@media (max-width: 1199px) {
+		font-size: 12px;
+		line-height: 1.1;}
+	@media (max-width: 767px) {font-weight: 300;}	
+}
 .txt-semi{font-weight: 600;}
 .txt-20,.bold-20, .subtitle{font-size: 20px;}
-.txt-14{
-	font-size: 14px;
+.txt-14{font-size: 14px;}
 	
-}
+	
+
 .txt-10{
 	font-size: 10px;
 	line-height: 0.97;

@@ -4,8 +4,9 @@ mixin info-card(title, txt, icon, iconW, iconH)
 			.info-card__icon
 				img(src="./img/info-cards/icon"+ icon +".svg", width= iconW height=  iconH alt="icon")
 		
-		.info-card__title !{title}
-		p !{txt}
+		.card-title !{title}
+		.card-text
+			p !{txt}
 
 mixin info-card-ui(title, txt, icon, iconW, iconH)
 	.info-card
@@ -13,14 +14,16 @@ mixin info-card-ui(title, txt, icon, iconW, iconH)
 			.info-card__icon
 				img(src="../img/info-cards/icon1.svg", alt="icon")
 		
-		.info-card__title !{title}
-		p !{txt}
+		.card-title !{title}
+		.card-text
+			p !{txt}
 
 mixin flex-card(img, title, text)
 	.flex-card
 		.flex-card__img
 			img.wh-100(src="./img/techno-logo/t"+img+".webp", srcset="./img/techno-logo/t"+img+"@2x.webp 2x" width="70" height="70" alt="img")
 		.flex-card__text
-			.flex-card__title !{title}
-			p !{text}
+			.card-title !{title}
+			.card-text
+				p !{text}
 		
