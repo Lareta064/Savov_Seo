@@ -23,4 +23,49 @@ document.addEventListener("DOMContentLoaded", function () {
 			companyNames[activeIndex].classList.add('active');
         }
     });
+
+    // technoSlider
+    let technoSlider;
+    function toggleSlider() {
+        const screenWidth = window.innerWidth;
+    
+        if (screenWidth < 768) {
+            if (!technoSlider) {
+                
+                technoSlider = new Swiper('.technology-slider', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 35, // Пример настройки отступов между слайдами
+                    grid:{
+                        rows: 3
+                    },
+                    pagination: {
+                        el: '.technology-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+        } else {
+            if (technoSlider) {
+                // Уничтожаем слайдер, если экран больше 768px
+                technoSlider.destroy(true, true);
+                technoSlider = null; // Сбрасываем переменную
+            }
+        }
+    }
+    
+    // Вызываем функцию при загрузке страницы
+    toggleSlider();
+    
+    // Добавляем слушатель для события изменения размера экрана
+    window.addEventListener('resize', toggleSlider);
+   
+    // portfolio slider
+    let portfolioSlider = new Swiper('.portfolio-slider', {
+        effect: "cards",
+        grabCursor: true,
+        pagination: {
+            el: '.portfolio-pagination',
+            clickable: true,
+        },
+    })
 });

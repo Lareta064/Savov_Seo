@@ -15,4 +15,12 @@ mixin info-card-ui(title, txt, icon, iconW, iconH)
 		
 		.info-card__title !{title}
 		p !{txt}
+
+mixin flex-card(img, title, text)
+	.flex-card
+		.flex-card__img
+			img.wh-100(src="./img/techno-logo/t"+img+".webp", srcset="./img/techno-logo/t"+img+"@2x.webp 2x" width="70" height="70" alt="img")
+		.flex-card__text
+			.flex-card__title !{title}
+			p !{text}
 		
