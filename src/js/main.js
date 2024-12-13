@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			});
 		});
 	}
+	
 	/*==================FORM ===================*/
 	const formItems = document.querySelectorAll(".form-item");
 
