@@ -205,4 +205,102 @@ document.addEventListener("DOMContentLoaded", function () {
 			labelTxt.textContent = "Добавить файл"; // Возвращаем текст по умолчанию
 		}
 	}
+
+	const customTabs = document.querySelectorAll('.custom-tab-item');
+	const breakpoint = 1200; // Ширина экрана для переключения логики
+	
+	// Функция для управления поведением на экранах больше 1200px (ховер)
+	function enableHoverBehavior() {
+		customTabs.forEach((tab) => {
+			const btn = tab.querySelector('.custom-tab-btn');
+			btn.addEventListener('mouseenter', () => handleHover(tab));
+			tab.addEventListener('mouseleave', () => resetHover(tab));
+		});
+	
+		// Сбрасываем активные классы при загрузке или ресайзе
+		customTabs.forEach((tab) => {
+			tab.classList.remove('active');
+		});
+	}
+	
+	// Функция для управления поведением на экранах меньше 1200px (клик)
+	function enableClickBehavior() {
+		customTabs.forEach((tab) => {
+			const btn = tab.querySelector('.custom-tab-btn');
+			btn.addEventListener('click', () => handleClick(tab));
+		});
+	
+		// Сбрасываем активные состояния при загрузке или ресайзе
+		customTabs.forEach((tab) => {
+			const hiddenContent = tab.querySelector('.custom-tab-hidden');
+			tab.classList.remove('active');
+			hiddenContent.style.maxHeight = 0;
+		});
+	}
+	
+	// Функция для обработки ховера
+	function handleHover(tab) {
+		const hiddenContent = tab.querySelector('.custom-tab-hidden');
+	
+		// Удаляем active у всех других табов
+		customTabs.forEach((item) => {
+			item.classList.remove('active');
+		});
+	
+		// Добавляем active к текущему табу
+		tab.classList.add('active');
+		hiddenContent.style.maxHeight = `100%`;
+	}
+	
+	// Функция для сброса ховера
+	function resetHover(tab) {
+		const hiddenContent = tab.querySelector('.custom-tab-hidden');
+	
+		tab.classList.remove('active');
+		hiddenContent.style.maxHeight = 0;
+	}
+	
+	// Функция для обработки клика
+	function handleClick(tab) {
+		const hiddenContent = tab.querySelector('.custom-tab-hidden');
+		const isActive = tab.classList.contains('active');
+	
+		// Сбрасываем активные состояния у всех табов
+		customTabs.forEach((item) => {
+			item.classList.remove('active');
+			item.querySelector('.custom-tab-hidden').style.maxHeight = 0;
+		});
+	
+		if (!isActive) {
+			// Добавляем active и устанавливаем max-height для текущего таба
+			tab.classList.add('active');
+			hiddenContent.style.maxHeight = `${hiddenContent.scrollHeight}px`;
+		}
+	}
+	
+	// Переключение поведения в зависимости от ширины экрана
+	function toggleBehavior() {
+		const screenWidth = window.innerWidth;
+	
+		// Убираем старые обработчики перед включением новой логики
+		customTabs.forEach((tab) => {
+			const btn = tab.querySelector('.custom-tab-btn');
+			btn.replaceWith(btn.cloneNode(true)); // Удаляем все события через замену элемента
+		});
+	
+		// Включаем нужную логику
+		if (screenWidth >= breakpoint) {
+			enableHoverBehavior();
+		} else {
+			enableClickBehavior();
+		}
+	}
+	
+	// Инициализация при загрузке страницы
+	toggleBehavior();
+	
+	// Слушатель на изменение размера экрана
+	window.addEventListener('resize', toggleBehavior);
+	
+
 });
