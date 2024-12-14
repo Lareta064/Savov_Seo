@@ -1,7 +1,6 @@
 @use "base/var" as *;
 .custom-tabs{
-	// position: relative;
-	// display: grid;
+
 	.custom-tab-item{
 		font-family: var(--second-family);
 		@media (max-width: 1023px) {
@@ -40,7 +39,7 @@
 	font-size: 24px;
 	color: #a4a6a9;
 	transition: .3s; 
-	// width: calc(( 100% - 30px) / 2);
+	
 	position: relative;
 	& *{pointer-events: none;}
 	p{flex-grow: 1;}
@@ -64,33 +63,7 @@
 		& *{pointer-events: none;}
 	}
 }
-// .custom-tab-item:hover .custom-tab-btn{
-// 	color: white;
-// 	background: #f98836;
-// 	&:after{
-// 		background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='35' height='23' viewBox='0 0 35 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M20.4048 0.997652C19.7529 1.54627 19.2193 2.08837 19.2193 2.20237C19.2193 2.31638 21.0891 3.96478 23.3748 5.86586C25.6606 7.7667 27.5724 9.42209 27.6234 9.5447C27.6814 9.68383 22.6626 9.78993 14.241 9.82762L0.765625 9.88811L0.765625 11.5167L0.765625 13.1454L14.241 13.2059C22.5446 13.2431 27.6806 13.3506 27.6234 13.486C27.5724 13.607 25.6606 15.2675 23.3748 17.1758C21.0891 19.0843 19.2193 20.7425 19.2193 20.8607C19.2193 21.2729 21.6932 23.0775 22.1487 22.9974C22.4012 22.9532 25.4628 20.3642 28.9524 17.2439C34.578 12.2136 35.2559 11.5249 34.9353 11.1638C33.7317 9.80784 22.3953 0 22.0318 0C21.789 0 21.057 0.449036 20.4048 0.997652Z' fill='%23FFFFFF' /%3e%3c/svg%3e");
-// 	}
-// }
-// .custom-tab-hidden{
-// 	position: absolute;
-// 	top: 0;
-// 	right: 0;
-// 	bottom: 0;
-// 	width: calc(( 100% - 30px) / 2);
-// 	display: none;
-// 	z-index: -1;
-// 	display: flex;
-// 	transition: .3s;
-// 	@media (max-width: 1023px) {
-// 		max-height: 0;
-// 		position: relative;
-// 		inset:auto;
-		
-// 		width: 100%;	
-// 		overflow: hidden;
-		
-// 	}
-// }
+
 .custom-tab-body{
 	background-color: #282828;
 	padding: 40px;
@@ -119,7 +92,7 @@
 	display: block;
 }
 .custom-tabs{
-	// overflow: hidden;
+	
 	.custom-tab-item +.custom-tab-item{
 		margin-top: 20px;
 		@media (max-width: 767px) {
@@ -127,13 +100,13 @@
 		}
 	}
 }
-/*********************/
+
 .custom-tabs{
 	position: relative;
 	overflow: hidden;
 }
 .custom-tab-item{
-	// width: calc(( 100% - 30px) / 2);
+	
 	font-family: var(--second-family);
 }
 .custom-tab-item.active{
@@ -177,15 +150,15 @@
 	color: #d6d6d6;
 	width: 100%;
 }
-/* Общие стили */
+
 .custom-tab-hidden {
-    max-height: 0; /* Изначально скрыт */
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease; /* Плавное открытие */
+    transition: max-height 0.3s ease; 
 }
 
 .custom-tab-item.active .custom-tab-hidden {
-    max-height: none; /* Для работы с высотой контента */
+    max-height: none;
 }
 
 @media (min-width: 1200px) {
@@ -195,12 +168,12 @@
         right: 0;
         bottom: 0;
         width: calc((100% - 30px) / 2);
-        max-height: none; /* Для логики hover */
-        display: none; /* Скрываем по умолчанию */
+        max-height: none; 
+        display: none;
     }
 
     .custom-tab-item.active .custom-tab-hidden {
-        display: flex; /* Показываем при active */
+        display: flex;
         z-index: 10;
     }
 }
@@ -209,11 +182,11 @@
     .custom-tab-hidden {
         position: relative;
         inset: auto;
-        max-height: 0; /* Скрыт изначально */
+        max-height: 0; 
         overflow: hidden;
 		width: 100%;
 		z-index: 3;
-        transition: max-height 0.3s ease; /* Плавное раскрытие */
+        transition: max-height 0.3s ease;
     }
 	.custom-tab-item.active .custom-tab-body{margin-top: 10px;}
 	.custom-tab-item.active .custom-tab-hidden{
