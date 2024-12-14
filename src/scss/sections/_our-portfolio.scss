@@ -1,5 +1,21 @@
+.our-portfolio{
+  overflow: hidden;
+}
 .portfolio-slider.swiper{
-      width: 76.4%;
-    margin-inline: auto;
+    width: 95%;
+    max-width: 1285px;
+     margin-inline: auto;
+    @media (max-width: 1199px) {
+      width: 90%;
+    }
+    @media (max-width: 1023px) {
+      width: 70%;
+    }
 
+  }
+  .portfolio-slider{
+    padding-bottom: 30px;
+  }
+  .portfolio-slider .swiper-slide{
+    padding-bottom: 5px;
   }
