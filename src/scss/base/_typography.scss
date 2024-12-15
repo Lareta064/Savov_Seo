@@ -19,7 +19,7 @@
 	}
 	
 }
-.title{
+.title, .big-title{
 	font-weight: 800;
 	font-size: 70px;
 	color: #4f4f4f;
@@ -32,6 +32,27 @@
 	@media (max-width: 767px) {
 	font-size: 36px;
 	margin-bottom: 30px;
+	}
+}
+.big-title{
+	   width: 20ch;
+		color: white;
+	@media (max-width: 1699px) {
+		font-size: 65px;
+		
+	}
+	@media (max-width: 1364px) {
+		font-size: 60px;
+		
+	}
+	@media (max-width: 1199px) {
+		font-size: 50px;
+		width: 18ch;
+	}
+	@media (max-width:767px) {
+		font-size: 32px;
+		 width: 100%;
+		 max-width: 440px;
 	}
 }
 .h2,
