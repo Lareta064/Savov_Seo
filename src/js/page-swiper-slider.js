@@ -59,6 +59,45 @@ document.addEventListener("DOMContentLoaded", function () {
     // Добавляем слушатель для события изменения размера экрана
     window.addEventListener('resize', toggleSlider);
    
+     // teamSlider;
+    let teamSlider;
+
+    function toggleTeamSlider() {
+        const screenWidth = window.innerWidth;
+    
+        const teamSwiperElement = document.querySelector('.team-swiper'); // Проверяем наличие элемента
+    
+        
+        if (screenWidth < 768) {
+            if (!teamSlider) {
+                // Инициализация слайдера
+                teamSlider = new Swiper('.team-swiper', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    grid:{
+                        rows: 2
+                    },
+                    pagination: {
+                        el: '.team-pagination',
+                        clickable: true,
+                    },
+                });
+            }
+        } else {
+            if (teamSlider) {
+                // Уничтожение слайдера
+                teamSlider.destroy(true, true);
+                teamSlider = null;
+            }
+        }
+    }
+    
+    // Вызываем функцию при загрузке страницы
+    document.addEventListener('DOMContentLoaded', toggleTeamSlider);
+    
+    // Добавляем слушатель для изменения размера экрана
+    window.addEventListener('resize', toggleTeamSlider);
+
     // portfolio slider
     let portfolioSlider = new Swiper('.portfolio-slider', {
         effect: "cards",
@@ -67,5 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
             el: '.portfolio-pagination',
             clickable: true,
         },
-    })
+    });
+
+
+
 });
