@@ -171,8 +171,9 @@
         width: calc((100% - 30px) / 2);
         max-height: none; 
         display: none;
+		min-height: 100% !important;
     }
-
+	
     .custom-tab-item.active .custom-tab-hidden {
         display: flex;
         z-index: 10;

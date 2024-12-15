@@ -89,6 +89,8 @@
 	margin-bottom: 30px;
 	@media (max-width: 1699px) {font-size: 20px; margin-bottom: 11px;}
 	@media (max-width: 1199px) {font-size: 16px; margin-bottom: 10px;}
+	@media (max-width: 767px) {font-size: 11px;}
+
 }
 .card-text, .card-text p{
 	font-family: var(--second-family);
@@ -101,7 +103,7 @@
 	@media (max-width: 1199px) {
 		font-size: 12px;
 		line-height: 1.1;}
-	@media (max-width: 767px) {font-weight: 300;}	
+	@media (max-width: 767px) {font-weight: 300;font-size: 9px;}	
 }
 .txt-semi{font-weight: 600;}
 .txt-20,.bold-20, .subtitle{font-size: 20px;}

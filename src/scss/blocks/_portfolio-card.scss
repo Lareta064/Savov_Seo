@@ -182,9 +182,14 @@
 				
 		}
 	}
+	.portfolio-card__header{margin-bottom: 10px;}
 	.portfolio-card__left{row-gap:9px;}
 	.portfolio-card__compare{
 		flex-direction: column;
 		row-gap: 9px;
+	}
+	.icon-decor-text img{
+		width: 22px;
+		height:22px;
 	}
 }
