@@ -6,8 +6,6 @@
 	text-align: center;
 	margin-inline: auto;
 	position: relative;
-	
-
 }
 .search-decore{
 	position: absolute;
@@ -36,4 +34,9 @@
 		width: 35%;
 	}
 	
+}
+.our-mission-title{
+	@media(min-width: 1200px){
+		margin-top: 60px;
+	}
 }
