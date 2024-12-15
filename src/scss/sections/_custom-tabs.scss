@@ -3,6 +3,7 @@
 
 	.custom-tab-item{
 		font-family: var(--second-family);
+		width: calc(50% - 15px);
 		@media (max-width: 1023px) {
 			&.active .custom-tab-btn{
 				color: white;
@@ -30,7 +31,7 @@
 .custom-tab-btn{
 	border: 1px solid #4d4e4f;
 	border-radius: 66px;
-	padding-inline: 2.3em;
+	padding-inline: 2em;
 	height: 73px;
 	display: flex;
 	align-items: center;
@@ -56,8 +57,8 @@
 		@media (max-width: 1799px) {width: 25px;}
 
 	}
-	@media (max-width: 1799px) {font-size: 18px; height: 60px;}
-	@media (max-width: 1364px) {font-size: 16px; height: 50px;}
+	@media (max-width: 1799px) {padding-inline: 1.5em; font-size: calc(15px + (24 - 15) * ((100vw - 390px) / (1920 - 390))); height: 60px;}
+	@media (max-width: 1364px) {height: 50px;}
 	@media (max-width: 1023px) {
 		width: 100%;
 		& *{pointer-events: none;}
@@ -179,6 +180,7 @@
 }
 
 @media (max-width: 1199px) {
+	.custom-tabs .custom-tab-item{width: 100%;}
     .custom-tab-hidden {
         position: relative;
         inset: auto;

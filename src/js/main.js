@@ -301,6 +301,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 	// Слушатель на изменение размера экрана
 	window.addEventListener('resize', toggleBehavior);
+	/*********************************************** */
+	
+		
 	
 
 });
+
