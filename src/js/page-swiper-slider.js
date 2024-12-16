@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', toggleSlider);
    
      // teamSlider;
+
     let teamSlider;
 
     function toggleTeamSlider() {
@@ -67,37 +68,85 @@ document.addEventListener("DOMContentLoaded", function () {
     
         const teamSwiperElement = document.querySelector('.team-swiper'); // Проверяем наличие элемента
     
-        
-        if (screenWidth < 768) {
-            if (!teamSlider) {
-                // Инициализация слайдера
-                teamSlider = new Swiper('.team-swiper', {
-                    slidesPerView: 'auto',
-                    spaceBetween: 20,
-                    grid:{
-                        rows: 2
-                    },
-                    pagination: {
-                        el: '.team-pagination',
-                        clickable: true,
-                    },
-                });
+        if (teamSwiperElement) {
+            if (screenWidth < 768) {
+                if (!teamSlider) {
+                    // Инициализация слайдера
+                    teamSlider = new Swiper('.team-swiper', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 20,
+                        grid: {
+                            rows: 2
+                        },
+                        pagination: {
+                            el: '.team-pagination',
+                            clickable: true,
+                        },
+                    });
+                }
+            } else {
+                if (teamSlider) {
+                    // Уничтожение слайдера
+                    teamSlider.destroy(true, true);
+                    teamSlider = null;
+                }
             }
         } else {
-            if (teamSlider) {
-                // Уничтожение слайдера
-                teamSlider.destroy(true, true);
-                teamSlider = null;
-            }
+            console.warn('Элемент .team-swiper не найден.');
         }
     }
     
-    // Вызываем функцию при загрузке страницы
-    document.addEventListener('DOMContentLoaded', toggleTeamSlider);
+    // Убедимся, что DOM и стили полностью загружены
+    window.addEventListener('load', () => {
+        toggleTeamSlider(); // Инициализация при загрузке страницы
     
-    // Добавляем слушатель для изменения размера экрана
-    window.addEventListener('resize', toggleTeamSlider);
+        // Добавляем слушатель для изменения размера экрана
+        window.addEventListener('resize', toggleTeamSlider);
+    });
+    //======= ====
+    let clientsSlider;
 
+    function toggleClientsSlider() {
+        const screenWidth = window.innerWidth;
+    
+        const clientsSwiperElement = document.querySelector('.clients-swiper'); // Проверяем наличие элемента
+    
+        if (clientsSwiperElement) {
+            if (screenWidth < 768) {
+                if (!clientsSlider) {
+                    // Инициализация слайдера
+                    clientsSlider = new Swiper('.clients-swiper', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 20,
+                        grid: {
+                            rows: 3
+                        },
+                        pagination: {
+                            el: '.clients-pagination',
+                            clickable: true,
+                        },
+                    });
+                }
+            } else {
+                if (clientsSlider) {
+                    // Уничтожение слайдера
+                    clientsSlider.destroy(true, true);
+                    clientslider = null;
+                }
+            }
+        } else {
+            console.warn('Элемент .clients-swiper не найден.');
+        }
+    }
+    
+    // Убедимся, что DOM и стили полностью загружены
+    window.addEventListener('load', () => {
+        toggleClientsSlider(); // Инициализация при загрузке страницы
+       
+        // Добавляем слушатель для изменения размера экрана
+        window.addEventListener('resize', toggleClientsSlider);
+    });
+    //============
     
     let portfolioSlider = new Swiper('.portfolio-slider', {
         effect: "cards",
@@ -143,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     el: '.review-pagination',
                     clickable: true,
                 },
+                speed: 800,
             });
         }
     }
