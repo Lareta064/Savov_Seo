@@ -115,11 +115,14 @@ main{
 }
 .inner-main{
   row-gap: 140px;
+  padding-bottom: 190px;
   @media (max-width: 1439px) {
     row-gap: 100px;
+    padding-bottom: 140px;
   }
   @media (max-width: 767px) {
     row-gap: 60px;
+    padding-bottom: 60px;
   }
 }
 .page-column{
@@ -251,3 +254,4 @@ main{
   border-radius: 12px;
   }
 }
+.txt-center{text-align: center; margin-inline: auto;}

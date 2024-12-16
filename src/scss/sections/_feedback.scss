@@ -1,0 +1,26 @@
+.feedback-content{
+	width: min(730px, 77.5%);
+	margin-inline: auto;
+}
+.feedback{
+	position: relative;
+	.title{ margin-bottom: 240px;}
+	.container{position: relative;
+	}
+	.feedback-bg{
+		position: absolute;
+		width: 80%;
+		aspect-ratio: 226 / 187;
+		left: 50%;
+		bottom: -40px;
+		max-width: 1130px;
+		margin-inline: auto;
+		transform: translateX(-50%);
+	}
+	@media (max-width: 1023px) {
+		.title{ margin-bottom: 40px;}
+		.feedback-bg{
+			width: 100%;
+		}
+	}
+}

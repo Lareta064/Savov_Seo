@@ -12,6 +12,7 @@
 @use "blocks/_main-menu.scss";
 @use "blocks/_modal.scss";
 
+@use "blocks/_flex-card.scss";
 @use "sections/_promo";
 @use "sections/_inner-promo";
 @use "sections/_promo-seo";
@@ -27,19 +28,8 @@
 @use "sections/_team.scss";
 @use "sections/_our-clients.scss";
 @use "sections/_review.scss";
-
-
-
-
-
-
-
-
-
-
-@use "blocks/_flex-card.scss";
-
-
+@use "sections/_services.scss";
+@use "sections/_feedback.scss";
 
 
 
