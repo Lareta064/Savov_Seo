@@ -13,6 +13,9 @@ html(lang="ru")
 		//====slick slider========
 		//- link(rel="stylesheet", href="../libs/swiper/swiper.min.css")
 		link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css')
+		//===== fancybox =====
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css')
+		
 		style.
 			@font-face {
 				font-family: "RF Dewi Expanded";
@@ -115,11 +118,19 @@ html(lang="ru")
 		
 		block content
 		
-		//====slick slider plagin========
+		//====jquery========
+		script(src="./libs/jquery-3.0.0.min.js")
+		//====swiper plagin========
 		script(src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js")
-		//====slick slider settings========
+		
+		//==== slider settings========
 		script(src="./js/page-swiper-slider.js")
+		
+		//====gsap===
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js")
-		//=============== мои скрипты ===================	
+
+		//======= fancybox========
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js")
+		//======= main.js========	
 		script(src="./js/main.js")

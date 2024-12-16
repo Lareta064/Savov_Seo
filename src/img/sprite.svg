@@ -61,4 +61,14 @@
   				<path d="M2 11.9072L14 1.09277" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
 		</g>
 	</symbol>
+	<symbol id="arr-left" viewBox="0 0 22 72">
+		<g>
+			  <path d="M18.2058 2L3 36.8501L19.3755 69.2109" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+		</g>
+	</symbol>
+	<symbol id="arr-right" viewBox="0 0 22 72">
+		<g>
+			<path d="M3.79418 2L19 36.8501L2.6245 69.2109" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+		</g>
+	</symbol>
 </svg>

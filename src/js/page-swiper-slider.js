@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Добавляем слушатель для изменения размера экрана
     window.addEventListener('resize', toggleTeamSlider);
 
-    // portfolio slider
+    
     let portfolioSlider = new Swiper('.portfolio-slider', {
         effect: "cards",
         grabCursor: true,
@@ -107,7 +107,49 @@ document.addEventListener("DOMContentLoaded", function () {
             clickable: true,
         },
     });
+    // reviewSwiper
+    let reviewSwiper;
 
-
-
+    function initReviewSwiper() {
+        const screenWidth = window.innerWidth;
+    
+        // Уничтожаем Swiper, если он уже существует
+        if (reviewSwiper) {
+            reviewSwiper.destroy(true, true);
+            reviewSwiper = null;
+        }
+    
+        // Создаем Swiper для экрана до 768px
+        if (screenWidth < 768) {
+            reviewSwiper = new Swiper('.review-swiper', {
+                effect: "cards",
+                grabCursor: true,
+                pagination: {
+                    el: '.review-pagination',
+                    clickable: true,
+                },
+            });
+        } 
+        // Создаем Swiper для экрана от 768px и выше
+        else {
+            reviewSwiper = new Swiper('.review-swiper', {
+                slidesPerView: screenWidth < 1024 ? 3 : 4,
+                spaceBetween: 25,
+                navigation: screenWidth >= 1024 ? {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                } : false,
+                pagination: {
+                    el: '.review-pagination',
+                    clickable: true,
+                },
+            });
+        }
+    }
+    
+    // Инициализация при загрузке страницы
+    initReviewSwiper();
+    
+    // Отслеживание изменения размера экрана
+    window.addEventListener('resize', initReviewSwiper);
 });

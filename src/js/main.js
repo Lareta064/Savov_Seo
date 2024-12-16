@@ -404,4 +404,32 @@ document.addEventListener("DOMContentLoaded", () => {
 	//- window.addEventListener('resize', () => {
 	//- 	initAnimation();
 	//- });	
+
+	function changeImage(itemClass) {
+		const items = document.querySelectorAll(itemClass);
+	
+		items.forEach((item) => {
+			const img = item.querySelector('img'); // Берем img внутри .client-card
+			if (!img) return; // Если img нет, выходим
+	
+			const itemHoverImg = img.getAttribute('data-src'); // Берем data-src
+			const itemDefaultImg = img.getAttribute('src'); // Берем src
+			
+			// Вешаем события на родительский элемент (блок)
+			item.addEventListener('mouseenter', () => {
+				img.setAttribute('src', itemHoverImg); // Меняем src на hover
+			});
+			item.addEventListener('mouseleave', () => {
+				img.setAttribute('src', itemDefaultImg); // Возвращаем src
+			});
+		});
+	}
+	changeImage('.client-card');
+	
+	lightbox.option({
+		'resizeDuration': 200,
+		'alwaysShowNavOnTouchDevices': true,
+		'showImageNumberLabel': false,
+		'disableScrolling':true,
+	  })
 });

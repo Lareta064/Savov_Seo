@@ -1,6 +1,6 @@
 @use "base/var" as *;
 .seo-map{
-	overflow: hidden;
+	
 	@media(min-width:768px){overflow: hidden;}
 }
 .seo-map-grid{

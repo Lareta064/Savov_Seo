@@ -1,0 +1,46 @@
+.our-clients .title{
+	
+	@media(min-width: 1024px){max-width: 20ch;}
+}
+.clients-swiper{
+	.swiper-wrapper{
+		@media(min-width:768px){
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		@media (min-width: 1024px) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		@media (min-width: 1280px) {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+}
+.client-card{
+	height: 208px;
+	width: 100%;
+	flex-shrink: 0;border-radius: 26px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 15px;
+	background-color: transparent;
+	transition: .3s;
+	position: relative;
+	&>*{
+		position: relative;
+		z-index: 2;
+	}
+	&:after{
+		content:'';
+		position: absolute;
+		inset:0;
+		border-radius: inherit;
+		background-color: #d4deef;
+		transform: scale(0);
+		transition: .3s;
+	}
+	&:hover:after{
+		transform: scale(1);
+	}
+}
