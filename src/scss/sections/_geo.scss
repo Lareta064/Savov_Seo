@@ -17,10 +17,10 @@
 	*[class^="city-"]{opacity: 0;}
 	svg{color: transparent; transition: .3s; width:100%; height: 100%;}
 	&:hover svg{color: #D4DEEF;}
-	&:hover .country-capital{opacity: 0;}
+	&:hover .country-name{opacity: 0;}
 	&:hover *[class^="city-"]{opacity: 1;}
 }
-.country-capital, 
+.country-name, 
 *[class^="city-"]{
 	font-weight: 700;
     font-size: 15px;
@@ -67,7 +67,7 @@
 	position: absolute;
 	top: 28%;
 	left: 52%;
-	.city-one, .country-capital{
+	.city-one, .country-name{
 		position: absolute;
 		top: 5px;
 	}
