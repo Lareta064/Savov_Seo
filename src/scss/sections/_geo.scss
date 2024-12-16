@@ -94,9 +94,33 @@
 		left:60%;
 	}
 }
-.svg-china{
-	display: block;
-	width:266px;
-	height: 186px;
+.country-russia{
+	position: absolute;
+	top: 3%;
+	right: 1%;
+	width: calc(( 754 / 1630)*100%);
+	aspect-ratio: 754 / 296;
 	
+}
+
+.country-usa{
+	width: calc(( 450 / 1630)*100%);
+	aspect-ratio: 450 / 312;
+	position: absolute;
+    left: 0.6%;
+    top: 14.8%;
+}
+.country-italy{
+	width: calc(( 52 / 1630)*100%);
+	aspect-ratio: 52 /58;
+	position: absolute;
+    top: 35.8%;
+    left: 48.8%;
+}
+.country-arabia{
+	width: calc(( 94 / 1630)*100%);
+	aspect-ratio: 94 / 78;
+    position: absolute;
+    left: 56.5%;
+    top: 46.5%;
 }
