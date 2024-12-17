@@ -13,12 +13,10 @@
 	}
 }
 .country-box {
-	cursor:pointer;
+	
 	*[class^="city-"]{opacity: 0;}
 	svg{color: transparent; transition: .3s; width:100%; height: 100%;}
-	&:hover svg{color: #D4DEEF;}
-	&:hover .country-name{opacity: 0;}
-	&:hover *[class^="city-"]{opacity: 1;}
+	
 }
 .country-name, 
 *[class^="city-"]{
@@ -63,7 +61,14 @@
 		font-size: 11px;
 	}
 }
+.country-name ~ p, .country-name:hover + svg{opacity: 0;}
+.country-name:hover{opacity: 0;}
+.country-name:hover ~ p, .country-name:hover + svg{opacity: 1;}
+.country-name:hover + svg{color: #D4DEEF;}
+
 .country-name{
+	cursor:pointer;
+	z-index: 3;
 	font-size: 15px; padding-left: 24px;padding-right: 8px;
 	@media (max-width: 1439px) {
 		font-size: 13px;
@@ -79,7 +84,7 @@
 	left: 52%;
 	.city-one, .country-name{
 		position: absolute;
-		top: 5px;
+		top: 90%;
 	}
 
 }
@@ -150,4 +155,21 @@
     position: absolute;
     left: 56.5%;
     top: 46.5%;
+}
+.country-latvia{
+	width: 33px;
+	height: 17px;
+	position: absolute;
+	top: 27%;
+	left: 53%;
+	.country-name{left: 0; transform: translateX(-100%);}
+	 .city-one{ transform: translateY(-100%);}
+}
+.country-kazakhstan{
+	width: 182px;
+	height: 86px;
+	position: absolute;
+	top: 29%;
+	right: 29%;
+	.country-name{left: 23%}
 }

@@ -432,5 +432,20 @@ document.addEventListener("DOMContentLoaded", () => {
 		'alwaysShowNavOnTouchDevices': true,
 		'showImageNumberLabel': false,
 		'disableScrolling':true,
-	  })
+	  });
+	
+	
+	/*interActive map*/
+	const mapCountryNames = document.querySelectorAll('.country-name');
+	if (mapCountryNames.length > 0) {
+		mapCountryNames.forEach((item) => {
+			item.addEventListener('mouseenter', () => {
+				mapCountryNames.forEach((el) => el.style.opacity = 0); 
+			});
+	
+			item.addEventListener('mouseleave', () => {
+				mapCountryNames.forEach((el) => el.style.opacity = 1);
+			});
+		});
+	}
 });
