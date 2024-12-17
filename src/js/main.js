@@ -448,4 +448,29 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		});
 	}
+	/*=====QUIZ ==== */
+	const quiz = document.querySelector('#quiz');
+	if (quiz) {
+		const quizPlates = Array.from(quiz.querySelectorAll('.quiz-form__plate')); // Преобразование в массив
+		quizPlates.forEach((plate) => {
+			const btnNext = plate.querySelector('.btn-next');
+			const btnPrev = plate.querySelector('.btn-prev');
+			const plateInd = quizPlates.indexOf(plate); // Теперь будет работать
+			console.log(plateInd);
+			if(btnNext){
+				btnNext.addEventListener('click', (e)=>{
+					e.preventDefault();	
+					plate.classList.add('done');
+					plate.nextElementSibling.classList.add('active');
+				});
+			}
+			if(btnPrev){
+				btnPrev.addEventListener('click', (e)=>{
+					e.preventDefault();	
+					plate.classList.remove('done');
+					plate.previousElementSibling.classList.add('active');
+				});
+			}
+		});
+	}
 });
