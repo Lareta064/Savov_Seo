@@ -1,0 +1,144 @@
+//====QUIZ=====
+section.quiz
+	.container
+		form.quiz-form
+			//===== question #1 ====
+			.quiz-form__plate.active#plate_1
+				.flex-header
+					.title Заполните заявку онлайн
+					.title-32 1/4
+				.quiz-form__body
+					.quiz-form__group
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Вебсайт
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Личный кабинет
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio SEO
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Реклама
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Видео-ролик
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Мобильное приложение
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Мобильное приложение
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Бренд для компании или продукта
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest1")
+							span.custom-radio Наполнение сайта
+				.quiz-form__footer
+					button.btn-next.btn-blue Далее
+
+			//===== question #2 ====
+			.quiz-form__plate#plate_2
+				.flex-header
+					.title Оптимальная стоимость и сроки
+					.title-32 2/4
+				.quiz-form__body
+					.quiz-form__group
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest2")
+							span.custom-radio до 0.5 млн
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest2")
+							span.custom-radio от 0.5 млн до 2 млн
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest2")
+							span.custom-radio от 2 млн до 4 млн
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest2")
+							span.custom-radio более 4 млн
+					
+					//==== СРОКИ ===
+					.quiz-form__group
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest3")
+							span.custom-radio 1-3 месяца
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest3")
+							span.custom-radio 6-12 месяцев
+						//===single item ===
+						label.custom-label
+							input.hide-input(type="radio" name="quest3")
+							span.custom-radio более 12 месяцев
+						
+				.quiz-form__footer
+					button.btn-prev.btn-grey Назад
+					button.btn-next.btn-blue Далее
+			
+			
+			//===== question #3 ====
+			.quiz-form__plate#plate_3
+				.flex-header
+					.title Как должен выглядеть результат?
+					.title-32 3/4
+				.quiz-form__body
+					.quiz-form__group.flex
+						.form-textarea
+							textarea(name="message"  placeholder="Опишите словами, или пришлите ссылки на референсы")
+						//==== инпут загрузки файла с компьютера====
+						.fileUpload-group
+							label.fileUpload-label.round-btn.error
+								input.form-input.fileUploadInput(type="file")
+								span.fileUpload-name.round-btn__name Добавить файл
+								span.form-input-state
+							p.fileUpload-limit *Файл должен быть не более 10 мб
+					
+					
+						
+				.quiz-form__footer
+					button.btn-prev.btn-grey Назад
+					button.btn-next.btn-blue Далее
+
+			//===== question #4 ====
+			.quiz-form__plate#plate_4
+				.flex-header
+					.title Немного о себе
+					.title-32 4/4
+				.quiz-form__body
+					.quiz-form__grid
+						.form-item
+							input.form-input(type="text" placeholder="Ваше имя")
+							span.form-input-state
+						.form-item
+							input.form-input(type="text" placeholder="Компания")
+							span.form-input-state
+						
+						.form-item
+							input.form-input(type="text" placeholder="Ваш телефон или email")
+							span.form-input-state
+						
+						.form-item
+							input.form-input(type="text" placeholder="Должность")
+							span.form-input-state
+						
+				.quiz-form__footer
+					button.btn-prev.btn-grey Назад
+					button.btn-next.btn-blue Получить предложение
+
+					

@@ -58,6 +58,21 @@
 			.round-btn__name{font-weight: 600;color: #d4deef;}
 		}
 }
+.form-textarea textarea{
+	display: block;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+    resize: none;
+    min-height: 200px;
+    
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #424345;
+    padding: 30px;
+
+}
 .brif-btn{
 	@media (max-width: 767px) {
 	margin-left: auto;
@@ -233,7 +248,7 @@
 		row-gap:25px;
 	}
 }
-.hide-input-label{
+.hide-input-label,.custom-label{
 	position: relative;
 	
 }
