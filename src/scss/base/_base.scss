@@ -116,12 +116,12 @@ main{
 .inner-main{
   row-gap: 140px;
   padding-bottom: 190px;
-  // background-image: url('../img/logo-bg.svg');
+  background-image: url('../img/logo-bg.svg');
   background-repeat: no-repeat;
-  background-size: contain;
-  // &>*{position: relative;
-  // }
-  background-position: right center;
+  background-size: 29%;
+  background-position: right;
+  &>*{position: relative;
+  }
   @media (max-width: 1439px) {
     row-gap: 100px;
     padding-bottom: 140px;

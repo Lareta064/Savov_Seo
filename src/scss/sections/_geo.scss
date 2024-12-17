@@ -23,12 +23,12 @@
 .country-name, 
 *[class^="city-"]{
 	font-weight: 700;
-    font-size: 15px;
+    font-size: 12px;
 	color: white;
 	border-radius: 10px;
 	background-color: #302f2f;
 	border:1px solid #121212;
-	padding: 2px 8px 4px 24px;
+	padding: 2px 5px 3px 20px;
 	position: absolute;
 	width:max-content;
 	left: 50%;
@@ -59,6 +59,16 @@
 	@media (max-width: 1364px) {
 		font-size: 13px;
 	}
+	@media (max-width: 1439px) {
+		font-size: 11px;
+	}
+}
+.country-name{
+	font-size: 15px; padding-left: 24px;padding-right: 8px;
+	@media (max-width: 1439px) {
+		font-size: 13px;
+		padding-left: 22px;
+	}
 }
 .country-belarus{
 	width: calc(( 42 / 1630)*100%);
@@ -79,9 +89,8 @@
 	width: 42px;
 	height: 32px;
 	color:#D4DEEF;
-	 
-	
 }
+
 .country-china{
 	
 	width: calc(( 266 / 1630)*100%);
@@ -100,7 +109,21 @@
 	right: 1%;
 	width: calc(( 754 / 1630)*100%);
 	aspect-ratio: 754 / 296;
-	
+	.city-one{top:51%; left:7%;}
+	.city-two{top:59%; left:10%;}
+	.city-three{top:66%; left:16%;}
+	.city-four{top:75%;  left:14%;}
+	.city-five{top:85%;  left:15%;}
+	.city-six{top:56%; left:28%;}
+	.city-seven{top:47%; left:36%;}
+	.city-eight{top:62%; left:35%;}
+	.city-nine{top:72%; left:39%;}
+	.city-ten{top:63%; left:52%;}
+	.city-eleven{top:71%; left:50%;}
+	.city-twelve{top:42%; left:66%;}
+	.city-thirteen{top:83%; left:72%;}
+	.city-fourteen{top:69%; left:82%;}
+
 }
 
 .country-usa{
@@ -116,6 +139,10 @@
 	position: absolute;
     top: 35.8%;
     left: 48.8%;
+	.country-name{left: 110%}
+	.city-one{
+		top:5%!important;
+	}
 }
 .country-arabia{
 	width: calc(( 94 / 1630)*100%);
