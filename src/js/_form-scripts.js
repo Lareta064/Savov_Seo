@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (submitButton) {
 			submitButton.addEventListener("click", (event) => {
 				event.preventDefault(); // Отключаем стандартное поведение кнопки submit
-				console.log('555');
 				
 				if (successBlock) {
 					successBlock.classList.add("show-block");

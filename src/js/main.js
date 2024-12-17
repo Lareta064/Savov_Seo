@@ -450,27 +450,67 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	/*=====QUIZ ==== */
 	const quiz = document.querySelector('#quiz');
+
 	if (quiz) {
+		const quizForm = quiz.querySelector('.quiz-form');
 		const quizPlates = Array.from(quiz.querySelectorAll('.quiz-form__plate')); // Преобразование в массив
-		quizPlates.forEach((plate) => {
+	
+		quizPlates.forEach((plate, index) => {
 			const btnNext = plate.querySelector('.btn-next');
 			const btnPrev = plate.querySelector('.btn-prev');
-			const plateInd = quizPlates.indexOf(plate); // Теперь будет работать
-			console.log(plateInd);
-			if(btnNext){
-				btnNext.addEventListener('click', (e)=>{
-					e.preventDefault();	
+	
+			// Кнопка "Далее"
+			if (btnNext) {
+				btnNext.addEventListener('click', (e) => {
+					e.preventDefault();
+	
+					// Анимация для текущего слайда
 					plate.classList.add('done');
-					plate.nextElementSibling.classList.add('active');
+					plate.classList.remove('active');
+	
+					// Активация следующего слайда
+					const nextPlate = quizPlates[index + 1];
+					if (nextPlate) {
+						nextPlate.classList.add('active');
+					}
 				});
 			}
-			if(btnPrev){
-				btnPrev.addEventListener('click', (e)=>{
-					e.preventDefault();	
-					plate.classList.remove('done');
-					plate.previousElementSibling.classList.add('active');
+	
+			// Кнопка "Назад"
+			if (btnPrev) {
+				btnPrev.addEventListener('click', (e) => {
+					e.preventDefault();
+	
+					// Анимация для текущего слайда
+					plate.classList.remove('active');
+	
+					// Возвращаем предыдущий слайд
+					const prevPlate = quizPlates[index - 1];
+					if (prevPlate) {
+						prevPlate.classList.add('active');
+						prevPlate.classList.remove('done'); // Возвращаем анимацию
+					}
 				});
 			}
 		});
+	
+		// Инициализация первого слайда
+		quizPlates[0].classList.add('active');
+
+		const quizSubmitButton = quizForm.querySelector("[type='submit']");
+		const quizSuccessBlock = quizForm.querySelector("#quiz-success");
+		if (quizSubmitButton) {
+			quizSubmitButton.addEventListener("click", (event) => {
+				event.preventDefault(); // Отключаем стандартное поведение кнопки submit
+				
+				if ( quizSuccessBlock) {
+					quizSuccessBlock.classList.add("show-block");
+				}
+				quizPlates.forEach((el)=>{
+					el.classList.add("hide-block");
+				});
+			});
+		}
 	}
+	
 });

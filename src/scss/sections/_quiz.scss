@@ -1,28 +1,38 @@
+
 .quiz-form{
 	height:450px;
 	overflow: hidden;
 	position: relative;
+	border-radius: 24px;
 	
-	&__plate{
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		border-radius: 24px;
+	box-shadow: 7px 7px 16px 0 rgba(24, 24, 24, 0.45),
+            -7px -7px 16px 0 rgba(24, 24, 24, 0.45);
+        background: #2b2c2e;
+	&__plate {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
 		padding: 35px 35px 40px 35px;
-		box-shadow: 7px 7px 16px 0 rgba(24, 24, 24, 0.45), -7px -7px 16px 0 rgba(24, 24, 24, 0.45);
-    	background: #2b2c2e;
-		min-height:450px;
-		display: flex;
-		flex-direction: column;
-		z-index: 1;
-		transition: 1s; 
-		&>*{width:100%}
-		&.active{z-index: 2;}
-		&.active.done{transform: translateX(-100%);}
-		
-	}
+        background: #2b2c2e;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        transition: transform 0.3s ease, z-index 0s step-end; /* Плавность анимации */
+        transform: translateX(100%); /* Изначально слайды скрыты */
+        
+        &.active {
+            transform: translateX(0); /* Появляется на экране */
+            z-index: 2;
+        }
+
+        &.done {
+            transform: translateX(-100%); /* Уходит влево */
+            z-index: 1;
+        }
+    }
 	.title{
 		color: #d6d6d6;
 		font-size: calc(25px + (60 - 35) * ((100vw - 390px) / (1920 - 390)));
@@ -66,7 +76,7 @@
 
 	}
 }
-
+*.hide-block{display: none;}
 	
 
 
