@@ -1,3 +1,4 @@
+
 .geo-map{
 	width: 1630px;
 	height:800px;
@@ -10,6 +11,9 @@
 		max-width: 1630px;
 		aspect-ratio: 1630/800;
 		height: auto;
+	}
+	@media (max-width: 1279px) {
+	display: none;
 	}
 }
 .country-box {
@@ -60,6 +64,9 @@
 	@media (max-width: 1439px) {
 		font-size: 11px;
 	}
+	@media (max-width: 1359px) {
+		font-size: 8px;
+	}
 }
 .country-name ~ p, .country-name:hover + svg{opacity: 0;}
 .country-name:hover{opacity: 0;}
@@ -74,6 +81,10 @@
 		font-size: 13px;
 		padding-left: 22px;
 	}
+	@media (max-width: 1359px) {
+		font-size: 11px;
+	}
+	
 }
 .country-belarus{
 	width: calc(( 42 / 1630)*100%);
@@ -184,4 +195,27 @@
 	top: 29%;
 	right: 29%;
 	.country-name{left: 23%}
+}
+.geo-text{
+	width: 484px;
+	position: absolute;
+	z-index: 3;
+	left: 10%;
+	bottom: 13%;
+	backdrop-filter: blur(5px);
+	background: rgba(57, 59, 63, 0.6);
+	padding: 25px;
+	border-radius: 20px;
+	font-family: var(--second-family);
+	color: rgba(255,255,255, .65);
+	font-size:  18px;
+	line-height: 1.2;
+	.h2{
+		color: white;
+		font-weight: 600;
+		font-family: var(--second-family);
+	}
+	@media (max-width: 1699px) {
+		left: 3%;bottom: 5%;
+	}
 }
