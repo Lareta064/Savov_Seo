@@ -1,4 +1,8 @@
-
+.geo{
+	@media (max-width: 1279px) {
+	display: none;
+	}
+}
 .geo-map{
 	width: 1630px;
 	height:800px;
@@ -12,9 +16,7 @@
 		aspect-ratio: 1630/800;
 		height: auto;
 	}
-	@media (max-width: 1279px) {
-	display: none;
-	}
+	
 }
 .country-box {
 	

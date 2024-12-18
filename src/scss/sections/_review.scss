@@ -4,7 +4,7 @@
 .review-swiper{
 	padding-bottom: 60px;
 	@media (max-width: 767px) {
-		max-width: 370px!important;
+		max-width: 270px!important;
 	    padding-bottom: 40px;
 	 
 	}
@@ -34,6 +34,7 @@
     bottom: auto; 
     left: auto;
 	@media (max-width: 1023px) {
-	right: -30px;
+	right: 17px;
+	top: -27px;
 	}
 }

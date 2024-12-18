@@ -16,10 +16,10 @@
 		width: 40px;
 	}
 }
-.result-slider.swiper{
-	.swiper-pagination-bullet{
+.result-slider-pagination.swiper-pagination .swiper-pagination-bullet{
+
 		width: 27px;
-	}
+
 	@media (max-width: 1199px) {
 		width: 20px;
 	}

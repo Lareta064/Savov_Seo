@@ -5,7 +5,7 @@
 	line-height: .89;
 	font-weight: 800;
 	@media (max-width: 1919px) {
-	 font-size: calc(36px + (90 - 36) * ((100vw - 390px) / (1920 - 390)));
+	 font-size: calc(34px + (90 - 34) * ((100vw - 390px) / (1920 - 390)));
 	}
 }
 .inner-promo h1, .inner-promo .h1{
@@ -15,7 +15,7 @@
 	letter-spacing: -0.01em;
 	color: #f9f9f9;
 	@media (max-width: 1919px) {
-		font-size: calc(35px + (96 - 35) * ((100vw - 390px) / (1920 - 390)));
+		font-size: calc(34px + (96 - 34) * ((100vw - 390px) / (1920 - 390)));
 	}
 	
 }
@@ -50,12 +50,11 @@
 	}
 	@media (max-width: 1199px) {
 		font-size: 50px;
-		width: 18ch;
+		width: 100%;
+		
 	}
 	@media (max-width:767px) {
-		font-size: 32px;
-		 width: 100%;
-		 max-width: 440px;
+		font-size: 32px;max-width: 440px;
 	}
 }
 .h2,

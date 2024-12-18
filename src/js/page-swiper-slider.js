@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         grid: {
                             rows: 2
                         },
+                        speed: 800,
                         pagination: {
                             el: '.team-pagination',
                             clickable: true,
