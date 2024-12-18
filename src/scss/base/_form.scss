@@ -64,14 +64,16 @@
 	font-family: 'Montserrat', sans-serif;
     resize: none;
     min-height: 200px;
-    
+    font-size: 18px;
     border-radius: 15px;
     border: none;
     outline: none;
     color: #fff;
     background: #424345;
     padding: 30px;
-
+    @media (max-width: 767px) {
+		font-size: 16px;
+	}
 }
 .brif-btn{
 	@media (max-width: 767px) {
@@ -252,6 +254,7 @@
 	position: relative;
 	
 }
+.custom-label{cursor:pointer;}
 .hide-input{
 	width: 0.01em;
 	height: 0.01em;

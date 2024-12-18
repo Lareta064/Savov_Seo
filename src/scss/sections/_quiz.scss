@@ -35,7 +35,11 @@
     }
 	.title{
 		color: #d6d6d6;
-		font-size: calc(25px + (60 - 35) * ((100vw - 390px) / (1920 - 390)));
+		font-size: 60px;;
+		@media (max-width: 1799px) {
+		font-size: calc(25px + (60 - 35) * ((100vw - 390px) / (1620 - 390)));
+		}
+		
 	}
 	.title-32{color:  #4d4e4f;}
 	&__body{
