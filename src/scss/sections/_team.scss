@@ -47,9 +47,19 @@
 		&>*{position: relative;
 		z-index: 2;}
 		img{
-			width: 80%;
+			width: 90%;
 			
 		}
+		.rotate-img1 img,.rotate-img2 img{
+			border-radius: 10px;
+			box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+		}
+		
+		.rotate-img1{
+			transform: translate(30%, -20%) rotate(3deg); z-index: 2;;
+		}
+		.rotate-img2{transform: translate(-7%, 20%) rotate(-3deg);z-index: 1;}
+		
 	}
 	&__info{
 		&>*{margin-bottom: 7px;}

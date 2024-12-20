@@ -12,10 +12,10 @@
 		width: 80%;
 		aspect-ratio: 226 / 187;
 		left: 50%;
-		bottom: -40px;
+		top:0;
 		max-width: 1130px;
 		margin-inline: auto;
-		transform: translateX(-50%);
+		transform: translate(-50%, 25%);
 	}
 	@media (max-width: 1023px) {
 		.title{ margin-bottom: 40px;}

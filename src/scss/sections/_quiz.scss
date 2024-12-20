@@ -51,6 +51,7 @@
 		padding-top: 30px;
 		padding-bottom: 30px;
 		flex-grow: 1;
+		width: min(1076px, 100%);
 	}
 	&__group{
 		display: flex;
