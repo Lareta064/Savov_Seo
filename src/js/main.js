@@ -206,6 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 	//======= CUSTOM TABS=====
+	
 	const customTabs = document.querySelectorAll('.custom-tab-item');
 	const breakpoint = 1200; // Ширина экрана для переключения логики
 
@@ -214,7 +215,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		customTabs.forEach((tab) => {
 			const btn = tab.querySelector('.custom-tab-btn');
 			btn.addEventListener('mouseenter', () => handleHover(tab));
-			tab.addEventListener('mouseleave', () => resetHover(tab));
 		});
 
 		// Проверяем, если ни один таб не активен, делаем активным первый
@@ -242,24 +242,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		// Удаляем active у всех других табов
 		customTabs.forEach((item) => {
-			item.classList.remove('active');
-			item.querySelector('.custom-tab-hidden').style.maxHeight = 0;
+			if (item !== tab) {
+				item.classList.remove('active');
+				item.querySelector('.custom-tab-hidden').style.maxHeight = 0;
+			}
 		});
 
 		// Добавляем active к текущему табу
 		tab.classList.add('active');
-		hiddenContent.style.maxHeight = `100%`;
-	}
-
-	// Функция для сброса ховера
-	function resetHover(tab) {
-		const hiddenContent = tab.querySelector('.custom-tab-hidden');
-
-		tab.classList.remove('active');
-		hiddenContent.style.maxHeight = 0;
-
-		// После сброса проверяем, нужно ли активировать первый таб
-		ensureFirstTabActive();
+		hiddenContent.style.maxHeight = `${hiddenContent.scrollHeight}px`;
 	}
 
 	// Функция для обработки клика
@@ -291,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			if (!otherTabsActive && firstTab) {
 				const hiddenContent = firstTab.querySelector('.custom-tab-hidden');
 				firstTab.classList.add('active');
-				hiddenContent.style.maxHeight = `100%`;
+				hiddenContent.style.maxHeight = `${hiddenContent.scrollHeight}px`;
 			}
 		}
 	}
