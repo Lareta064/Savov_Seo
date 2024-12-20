@@ -148,7 +148,7 @@
 		 row-gap:30px;
 		background-color: #282828;
 		position: relative;
-		img{
+		.image-link{
 			position: absolute;
 			bottom: 30px;
 			right: 33px;
@@ -169,7 +169,7 @@
 		@media (max-width: 574px) {
 		font-size: 10px;
 		padding-right: 20px;
-		img{width: 40px;}
+		.image-link{width: 40px;}
 		}
 	}
 	@media (max-width: 1749px){
@@ -393,4 +393,11 @@
 }
 .result-slider-pagination.swiper-pagination{
 	bottom: 0;
+}
+.image-link{
+	transition: .3s; 
+	&:hover{
+		opacity: .5;
+		transform: rotate(90deg);
+	}
 }
