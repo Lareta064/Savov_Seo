@@ -156,6 +156,11 @@ document.addEventListener("DOMContentLoaded", function () {
             el: '.portfolio-pagination',
             clickable: true,
         },
+        speed: 1000,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
     });
     // reviewSwiper
     let reviewSwiper;
