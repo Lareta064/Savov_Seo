@@ -326,42 +326,48 @@ document.addEventListener("DOMContentLoaded", function () {
 /**********блок what-seo-wrapper************* */
 document.addEventListener("DOMContentLoaded", () => {
 	gsap.registerPlugin(ScrollTrigger);
-    const scrollWrapper = document.querySelector(".scroll-wrapper");
-    const seoWrapper = document.querySelector(".what-seo-wrapper");
-	if(seoWrapper){
+const scrollWrapper = document.querySelector(".scroll-wrapper");
+const seoWrapper = document.querySelector(".what-seo-wrapper");
+
+if (seoWrapper) {
     // Убедимся, что блок шире, чем контейнер
-		if (seoWrapper.scrollWidth > scrollWrapper.clientWidth) {
-			gsap.registerPlugin(ScrollTrigger);
+    if (seoWrapper.scrollWidth > scrollWrapper.clientWidth) {
+        gsap.registerPlugin(ScrollTrigger);
 
-			// Создаем ScrollTrigger
-			ScrollTrigger.create({
-				trigger: scrollWrapper,
-				start: "top center", // Начало эффекта, когда блок в зоне видимости
-				end: () => `+=${seoWrapper.scrollWidth - scrollWrapper.clientWidth}`, // Длина горизонтального скролла
-				scrub: true, // Скролл синхронизирован с колесиком мыши
-				pin: scrollWrapper, // Закрепляем блок на месте
-				anticipatePin: 1, // Сглаживание
-				onUpdate: (self) => {
-					// Горизонтальная прокрутка блока
-					const progress = self.progress; // От 0 до 1
-					const maxScroll = seoWrapper.scrollWidth - scrollWrapper.clientWidth;
-					gsap.to(seoWrapper, {
-						x: -maxScroll * progress,
-						ease: "none",
-						overwrite: "auto",
-					});
-				},
-			});
+        // Создаем ScrollTrigger
+        ScrollTrigger.create({
+            trigger: scrollWrapper,
+            start: () => {
+                const scrollWrapperRect = scrollWrapper.getBoundingClientRect();
+                const triggerOffset = window.innerHeight / 2 - scrollWrapperRect.height / 2;
+                return `top+=${triggerOffset} center`; // Блок начнет анимацию, когда его центр совпадает с центром окна
+            },
+            end: () => `+=${seoWrapper.scrollWidth - scrollWrapper.clientWidth}`, // Длина горизонтального скролла
+            scrub: true, // Скролл синхронизирован с колесиком мыши
+            pin: scrollWrapper, // Закрепляем блок на месте
+            anticipatePin: 1, // Сглаживание
+            onUpdate: (self) => {
+                // Горизонтальная прокрутка блока
+                const progress = self.progress; // От 0 до 1
+                const maxScroll = seoWrapper.scrollWidth - scrollWrapper.clientWidth;
+                gsap.to(seoWrapper, {
+                    x: -maxScroll * progress,
+                    ease: "none",
+                    overwrite: "auto",
+                });
+            },
+        });
 
-			// Настраиваем плавный выход
-			ScrollTrigger.create({
-				trigger: scrollWrapper,
-				start: () => `bottom top`, // Когда блок заканчивается
-				end: () => `bottom+=1 top`,
-				onLeaveBack: () => ScrollTrigger.refresh(true),
-			});
-		}
-	}
+        // Настраиваем плавный выход
+        ScrollTrigger.create({
+            trigger: scrollWrapper,
+            start: () => `bottom top`, // Когда блок заканчивается
+            end: () => `bottom+=1 top`,
+            onLeaveBack: () => ScrollTrigger.refresh(true),
+        });
+    }
+}
+
 	/*******вариант для what-seo-wrapper, когда он просто проезжает впрао / влево, когда в зоне видимости******** */
 	//- const scrollWrapper = document.querySelector('.scroll-wrapper');
 	//- const whatSeoWrapper = document.querySelector('.what-seo-wrapper');
@@ -408,29 +414,179 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	function changeImage(itemClass) {
 		const items = document.querySelectorAll(itemClass);
+		const breakpoint = 1200; // Ширина экрана для переключения логики
 	
-		items.forEach((item) => {
-			const img = item.querySelector('img'); // Берем img внутри .client-card
-			if (!img) return; // Если img нет, выходим
+		function resetAllImagesAndClasses() {
+			items.forEach((item) => {
+				const img = item.querySelector('img');
+				if (img) {
+					const originalImg = img.getAttribute('data-original') || img.getAttribute('src');
+					img.setAttribute('src', originalImg); // Возвращаем изображение в исходное состояние
+				}
+				item.classList.remove('active'); // Удаляем класс active
+			});
+		}
 	
-			const itemHoverImg = img.getAttribute('data-src'); // Берем data-src
-			const itemDefaultImg = img.getAttribute('src'); // Берем src
-			
-			// Вешаем события на родительский элемент (блок)
-			item.addEventListener('mouseenter', () => {
-				img.setAttribute('src', itemHoverImg); // Меняем src на hover
+		function setHoverLogic() {
+			items.forEach((item) => {
+				const img = item.querySelector('img');
+				if (!img) return;
+	
+				const itemHoverImg = img.getAttribute('data-src');
+				const itemDefaultImg = img.getAttribute('src');
+				img.setAttribute('data-original', itemDefaultImg); // Сохраняем оригинальное значение
+	
+				item.addEventListener('mouseenter', () => {
+					resetAllImagesAndClasses(); // Сбрасываем все перед ховером
+					item.classList.add('active');
+					img.setAttribute('src', itemHoverImg); // Меняем src на hover
+				});
+	
+				item.addEventListener('mouseleave', () => {
+					item.classList.remove('active');
+					img.setAttribute('src', itemDefaultImg); // Возвращаем src
+				});
+	
+				// Удаляем обработчик кликов
+				item.onclick = null;
 			});
-			item.addEventListener('mouseleave', () => {
-				img.setAttribute('src', itemDefaultImg); // Возвращаем src
+		}
+	
+		function setClickLogic() {
+			items.forEach((item) => {
+				const img = item.querySelector('img');
+				if (!img) return;
+	
+				const itemHoverImg = img.getAttribute('data-src');
+				const itemDefaultImg = img.getAttribute('src');
+				img.setAttribute('data-original', itemDefaultImg); // Сохраняем оригинальное значение
+	
+				item.addEventListener('click', () => {
+					const isActive = item.classList.contains('active');
+	
+					// Сбрасываем все изображения и классы
+					resetAllImagesAndClasses();
+	
+					// Если элемент не активен, делаем его активным
+					if (!isActive) {
+						item.classList.add('active');
+						img.setAttribute('src', itemHoverImg);
+					}
+				});
+	
+				// Удаляем обработчики ховера
+				item.onmouseenter = null;
+				item.onmouseleave = null;
 			});
-		});
+		}
+	
+		function toggleLogic() {
+			const screenWidth = window.innerWidth;
+	
+			if (screenWidth >= breakpoint) {
+				setHoverLogic(); // На экранах от 1200px включаем ховер
+			} else {
+				setClickLogic(); // На экранах меньше 1200px включаем клик
+			}
+		}
+	
+		// Вызываем логику при загрузке страницы
+		toggleLogic();
+	
+		// Добавляем слушатель на изменение размера экрана
+		window.addEventListener('resize', toggleLogic);
 	}
+	
+	// Инициализация функции
 	changeImage('.client-card');
+	
+	
+	
 	
 	lightbox.option({
 		'resizeDuration': 200,
 		'alwaysShowNavOnTouchDevices': true,
 		'showImageNumberLabel': false,
 		'disableScrolling':true,
-	  })
+	  });
+	
+	
+	/*interActive map*/
+	const mapCountryNames = document.querySelectorAll('.country-name');
+	if (mapCountryNames.length > 0) {
+		mapCountryNames.forEach((item) => {
+			item.addEventListener('mouseenter', () => {
+				mapCountryNames.forEach((el) => el.style.opacity = 0); 
+			});
+	
+			item.addEventListener('mouseleave', () => {
+				mapCountryNames.forEach((el) => el.style.opacity = 1);
+			});
+		});
+	}
+	/*=====QUIZ ==== */
+	const quiz = document.querySelector('#quiz');
+
+	if (quiz) {
+		const quizForm = quiz.querySelector('.quiz-form');
+		const quizPlates = Array.from(quiz.querySelectorAll('.quiz-form__plate')); // Преобразование в массив
+	
+		quizPlates.forEach((plate, index) => {
+			const btnNext = plate.querySelector('.btn-next');
+			const btnPrev = plate.querySelector('.btn-prev');
+	
+			// Кнопка "Далее"
+			if (btnNext) {
+				btnNext.addEventListener('click', (e) => {
+					e.preventDefault();
+	
+					// Анимация для текущего слайда
+					plate.classList.add('done');
+					plate.classList.remove('active');
+	
+					// Активация следующего слайда
+					const nextPlate = quizPlates[index + 1];
+					if (nextPlate) {
+						nextPlate.classList.add('active');
+					}
+				});
+			}
+	
+			// Кнопка "Назад"
+			if (btnPrev) {
+				btnPrev.addEventListener('click', (e) => {
+					e.preventDefault();
+	
+					// Анимация для текущего слайда
+					plate.classList.remove('active');
+	
+					// Возвращаем предыдущий слайд
+					const prevPlate = quizPlates[index - 1];
+					if (prevPlate) {
+						prevPlate.classList.add('active');
+						prevPlate.classList.remove('done'); // Возвращаем анимацию
+					}
+				});
+			}
+		});
+	
+		// Инициализация первого слайда
+		quizPlates[0].classList.add('active');
+
+		const quizSubmitButton = quizForm.querySelector("[type='submit']");
+		const quizSuccessBlock = quizForm.querySelector("#quiz-success");
+		if (quizSubmitButton) {
+			quizSubmitButton.addEventListener("click", (event) => {
+				event.preventDefault(); // Отключаем стандартное поведение кнопки submit
+				
+				if ( quizSuccessBlock) {
+					quizSuccessBlock.classList.add("show-block");
+				}
+				quizPlates.forEach((el)=>{
+					el.classList.add("hide-block");
+				});
+			});
+		}
+	}
+	
 });

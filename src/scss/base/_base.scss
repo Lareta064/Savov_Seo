@@ -1,5 +1,61 @@
 @use "var" as *;
+@font-face {
+  font-family: "RF Dewi Expanded";
+  src: url("../fonts/RFDewiExpanded-Light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  }
+  @font-face {
+    font-family: "RF Dewi Expanded";
+    src: url("../fonts/RFDewiExpanded-Bold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    }
+    @font-face {
+      font-family: "RF Dewi Extended";
+      src: url("../fonts/RFDewiExtended-Bold.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      }
 
+    @font-face {
+      font-family: "RF Dewi Extended";
+      src: url("../fonts/RFDewiExtended-Semibold.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      }
+    @font-face {
+      font-family: "RF Dewi Expanded";
+      src: url("../fonts/RFDewiExpanded-UltraBold.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 800;
+      font-display: swap;
+      }
+    @font-face {
+      font-family: "RF Dewi Extended";
+      src: url("../fonts/RFDewiExtended-Ultrabold.woff2") format("woff2");
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      }
+      @font-face{
+				font-family: 'Montserrat';
+				src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+				font-weight: 600;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face{
+				font-family: 'Montserrat';
+				src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+				font-weight: bold;
+				font-style: normal;
+				font-display: swap;
+			}
 :root{
   --font-family: #{$ff};
   --second-family:#{$ft};
@@ -118,11 +174,16 @@ main{
   padding-bottom: 190px;
   background-image: url('../img/logo-bg.svg');
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
+  background-size: 29%;
+  background-position: right;
+  &>*{position: relative;
+  }
   @media (max-width: 1439px) {
     row-gap: 100px;
     padding-bottom: 140px;
+  }
+  @media (max-width: 1199px) {
+    background-image:none;
   }
   @media (max-width: 767px) {
     row-gap: 60px;
@@ -165,12 +226,13 @@ main{
   padding: 30px;
  }
 }
-.flex, .flex-center,.flex-wrap, .flex-center-wrap,.tags-wrapper,.icon-link,.flex-column{
+.flex, .flex-center,.flex-wrap, .flex-center-wrap,.tags-wrapper,.icon-link,.flex-column,.flex-header{
   display: flex;
   flex-direction:row;
   align-items: center;
   column-gap:18px;
 }
+.flex-header{justify-content: space-between; &>*{margin-bottom: 0!important;}}
 .flex-column{
   flex-direction: column;
   row-gap:10px;

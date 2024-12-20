@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const resultSlider = new Swiper('.result-slider', {
-        effect: 'fade',
+        
         speed: 800,
         pagination: {
             el: ".result-slider-pagination",
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         grid: {
                             rows: 2
                         },
+                        speed: 800,
                         pagination: {
                             el: '.team-pagination',
                             clickable: true,
