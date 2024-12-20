@@ -32,7 +32,8 @@
 	align-items: center;
 	padding: 30px 15px;
 	background-color: transparent;
-	transition: .3s;
+	
+	
 	position: relative;
 	img{object-fit: contain;}
 	&>*{
@@ -48,11 +49,12 @@
 		transform: scale(0);
 		transition: .3s;
 	}
-	&:hover:after{
+	
+	&.active:after{
 		transform: scale(1);
 	}
 	@media (max-width: 767px) {
-	//   padding: 40px 15px;
+	
 	  height: 130px;
 	  img{
 		width: 100%;
