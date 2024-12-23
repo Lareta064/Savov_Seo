@@ -314,95 +314,95 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/**********блок what-seo-wrapper************* */
-document.addEventListener("DOMContentLoaded", () => {
+	/**********блок what-seo-wrapper************* */
+	document.addEventListener("DOMContentLoaded", () => {
 	gsap.registerPlugin(ScrollTrigger);
-const scrollWrapper = document.querySelector(".scroll-wrapper");
-const seoWrapper = document.querySelector(".what-seo-wrapper");
+	// const scrollWrapper = document.querySelector(".scroll-wrapper");
+	// const seoWrapper = document.querySelector(".what-seo-wrapper");
 
-if (seoWrapper) {
-    // Убедимся, что блок шире, чем контейнер
-    if (seoWrapper.scrollWidth > scrollWrapper.clientWidth) {
-        gsap.registerPlugin(ScrollTrigger);
+	// if (seoWrapper) {
+	// 	// Убедимся, что блок шире, чем контейнер
+	// 	if (seoWrapper.scrollWidth > scrollWrapper.clientWidth) {
+	// 		// gsap.registerPlugin(ScrollTrigger);
 
-        // Создаем ScrollTrigger
-        ScrollTrigger.create({
-            trigger: scrollWrapper,
-            start: () => {
-                const scrollWrapperRect = scrollWrapper.getBoundingClientRect();
-                const triggerOffset = window.innerHeight / 2 - scrollWrapperRect.height / 2;
-                return `top+=${triggerOffset} center`; // Блок начнет анимацию, когда его центр совпадает с центром окна
-            },
-            end: () => `+=${seoWrapper.scrollWidth - scrollWrapper.clientWidth}`, // Длина горизонтального скролла
-            scrub: true, // Скролл синхронизирован с колесиком мыши
-            pin: scrollWrapper, // Закрепляем блок на месте
-            anticipatePin: 1, // Сглаживание
-            onUpdate: (self) => {
-                // Горизонтальная прокрутка блока
-                const progress = self.progress; // От 0 до 1
-                const maxScroll = seoWrapper.scrollWidth - scrollWrapper.clientWidth;
-                gsap.to(seoWrapper, {
-                    x: -maxScroll * progress,
-                    ease: "none",
-                    overwrite: "auto",
-                });
-            },
-        });
+	// 		// Создаем ScrollTrigger
+	// 		ScrollTrigger.create({
+	// 			trigger: scrollWrapper,
+	// 			start: () => {
+	// 				const scrollWrapperRect = scrollWrapper.getBoundingClientRect();
+	// 				const triggerOffset = window.innerHeight / 2 - scrollWrapperRect.height / 2;
+	// 				return `top+=${triggerOffset} center`; // Блок начнет анимацию, когда его центр совпадает с центром окна
+	// 			},
+	// 			end: () => `+=${seoWrapper.scrollWidth - scrollWrapper.clientWidth}`, // Длина горизонтального скролла
+	// 			scrub: true, // Скролл синхронизирован с колесиком мыши
+	// 			pin: scrollWrapper, // Закрепляем блок на месте
+	// 			anticipatePin: 1, // Сглаживание
+	// 			onUpdate: (self) => {
+	// 				// Горизонтальная прокрутка блока
+	// 				const progress = self.progress; // От 0 до 1
+	// 				const maxScroll = seoWrapper.scrollWidth - scrollWrapper.clientWidth;
+	// 				gsap.to(seoWrapper, {
+	// 					x: -maxScroll * progress,
+	// 					ease: "none",
+	// 					overwrite: "auto",
+	// 				});
+	// 			},
+	// 		});
 
-        // Настраиваем плавный выход
-        ScrollTrigger.create({
-            trigger: scrollWrapper,
-            start: () => `bottom top`, // Когда блок заканчивается
-            end: () => `bottom+=1 top`,
-            onLeaveBack: () => ScrollTrigger.refresh(true),
-        });
-    }
-}
+	// 		// Настраиваем плавный выход
+	// 		ScrollTrigger.create({
+	// 			trigger: scrollWrapper,
+	// 			start: () => `bottom top`, // Когда блок заканчивается
+	// 			end: () => `bottom+=1 top`,
+	// 			onLeaveBack: () => ScrollTrigger.refresh(true),
+	// 		});
+	// 	}
+	// }
 
 	/*******вариант для what-seo-wrapper, когда он просто проезжает впрао / влево, когда в зоне видимости******** */
-	//- const scrollWrapper = document.querySelector('.scroll-wrapper');
-	//- const whatSeoWrapper = document.querySelector('.what-seo-wrapper');
+	const scrollWrapper = document.querySelector('.scroll-wrapper');
+	const whatSeoWrapper = document.querySelector('.what-seo-wrapper');
 
-	//- let timeline; // Объявляем переменную для хранения анимации
+	 let timeline; // Объявляем переменную для хранения анимации
 
-	//- // Функция для инициализации анимации
-	//- function initAnimation() {
-	//- 	const scrollWrapperWidth = scrollWrapper.offsetWidth;
-	//- 	const whatSeoWrapperWidth = whatSeoWrapper.scrollWidth;
+	 // Функция для инициализации анимации
+	 function initAnimation() {
+	 	const scrollWrapperWidth = scrollWrapper.offsetWidth;
+	 	const whatSeoWrapperWidth = whatSeoWrapper.scrollWidth;
 
-	//- 	// Если экран больше 1880px или блок полностью помещается, убираем анимацию
-	//- 	if (window.innerWidth > 1880 || whatSeoWrapperWidth <= scrollWrapperWidth) {
-	//- 		// Если анимация уже запущена, останавливаем её
-	//- 		if (timeline) {
-	//- 			timeline.kill(); // Останавливаем анимацию
-	//- 			timeline = null; // Сбрасываем переменную
-	//- 			gsap.set(whatSeoWrapper, { x: 0 }); // Возвращаем блок в начальное положение
-	//- 		}
-	//- 		return;
-	//- 	}
+	 	// Если экран больше 1880px или блок полностью помещается, убираем анимацию
+	 	if (window.innerWidth > 1880 || whatSeoWrapperWidth <= scrollWrapperWidth) {
+	 		// Если анимация уже запущена, останавливаем её
+	 		if (timeline) {
+	 			timeline.kill(); // Останавливаем анимацию
+	 			timeline = null; // Сбрасываем переменную
+	 			gsap.set(whatSeoWrapper, { x: 0 }); // Возвращаем блок в начальное положение
+	 		}
+	 		return;
+	 	}
 
-	//- 	// Инициализируем GSAP анимацию, если её нет
-	//- 	if (!timeline) {
-	//- 		timeline = gsap.timeline({
-	//- 			repeat: -1, // Бесконечная анимация
-	//- 			yoyo: true, // Движение туда и обратно
-	//- 			defaults: { duration: 10, ease: "linear" } // Длительность и плавность
-	//- 		});
+	 	// Инициализируем GSAP анимацию, если её нет
+	 	if (!timeline) {
+	 		timeline = gsap.timeline({
+	 			repeat: -1, // Бесконечная анимация
+	 			yoyo: true, // Движение туда и обратно
+	 			defaults: { duration: 5, ease: "linear" } // Длительность и плавность
+	 		});
 
-	//- 		timeline.to(whatSeoWrapper, {
-	//- 			x: `-${whatSeoWrapperWidth - scrollWrapperWidth}px` // Движение влево
-	//- 		});
-	//- 	}
-	//- }
+	 		timeline.to(whatSeoWrapper, {
+	 			x: `-${whatSeoWrapperWidth - scrollWrapperWidth}px` // Движение влево
+	 		});
+	 	}
+	 }
 
-	//- // Инициализация при загрузке страницы
-	//- initAnimation();
+	 // Инициализация при загрузке страницы
+	 initAnimation();
 
-	//- // Обработка ресайза
-	//- window.addEventListener('resize', () => {
-	//- 	initAnimation();
-	//- });	
-
+	 // Обработка ресайза
+	 window.addEventListener('resize', () => {
+	 	initAnimation();
+	 });	
+     /*===============================*/
 	function changeImage(itemClass) {
 		const items = document.querySelectorAll(itemClass);
 		const breakpoint = 1200; // Ширина экрана для переключения логики
