@@ -178,9 +178,13 @@ main{
   background-position: right;
   &>*{position: relative;
   }
-  @media (max-width: 1439px) {
+  @media (max-width: 1919px) {
     row-gap: 100px;
     padding-bottom: 140px;
+  }
+  @media (max-width: 1439px) {
+    row-gap: 80px;
+    padding-bottom: 80px;
   }
   @media (max-width: 1199px) {
     background-image:none;
