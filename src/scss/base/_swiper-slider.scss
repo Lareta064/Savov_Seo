@@ -4,9 +4,11 @@
 	width: 150px;
 
 	border-radius: 0;
-	background-color: #888888;
+	background-color: rgba(212, 222, 239, .4);
+	opacity: 1;
 	&.swiper-pagination-bullet-active{
 		background-color: #D4DEEF;
+		opacity: 1;
 	}
 	@media (max-width: 1199px) {
 		width: 70px;

@@ -56,21 +56,28 @@ mixin portfolio-card
 section.our-portfolio
 	.container
 		h1.title Кейсы
-		
-		//==== slider ====
-		.portfolio-slider.swiper
-			.swiper-wrapper
-				.swiper-slide
-					+portfolio-card
-				.swiper-slide
-					+portfolio-card
-				.swiper-slide
-					+portfolio-card
-				.swiper-slide
-					+portfolio-card
-				.swiper-slide
-					+portfolio-card
-			
-			.portfolio-pagination.swiper-pagination
+		.swiper-box
+			//=== slider nav arrows ===
+			button.portfolio-next.swiper-button-next
+				svg.arr-left
+					use(href='./img/sprite.svg#arr-right')
+			button.portfolio-prev.swiper-button-prev
+				svg.arr-right
+					use(href='./img/sprite.svg#arr-left')
+			//==== slider ====
+			.portfolio-slider.swiper
+				.swiper-wrapper
+					.swiper-slide
+						+portfolio-card
+					.swiper-slide
+						+portfolio-card
+					.swiper-slide
+						+portfolio-card
+					.swiper-slide
+						+portfolio-card
+					.swiper-slide
+						+portfolio-card
+				
+				.portfolio-pagination.swiper-pagination
 				
 

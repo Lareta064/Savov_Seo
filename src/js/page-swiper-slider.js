@@ -147,8 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Добавляем слушатель для изменения размера экрана
         window.addEventListener('resize', toggleClientsSlider);
     });
-    //============
-    
+    const screenWidth = window.innerWidth;
     let portfolioSlider = new Swiper('.portfolio-slider', {
         effect: "cards",
         grabCursor: true,
@@ -157,16 +156,17 @@ document.addEventListener("DOMContentLoaded", function () {
             clickable: true,
         },
         speed: 1000,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+        navigation: screenWidth >= 1024 ? {
+            nextEl: ".portfolio-next",
+            prevEl: ".portfolio-prev",
+        } : false,
+        
     });
     // reviewSwiper
     let reviewSwiper;
 
     function initReviewSwiper() {
-        const screenWidth = window.innerWidth;
+       
     
         // Уничтожаем Swiper, если он уже существует
         if (reviewSwiper) {
