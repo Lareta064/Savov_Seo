@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     const promoSwiper = new Swiper('.promo-slider', {
-        speed: 800,
+        speed: 1200,
         spaceBetween:20,
+        loop: true,
         pagination: {
             el: ".promo-slider-pagination",
 			clickable: true,
         },
+        autoplay:{
+            delay: 3000
+        }
     });
     const resultSlider = new Swiper('.result-slider', {
         
