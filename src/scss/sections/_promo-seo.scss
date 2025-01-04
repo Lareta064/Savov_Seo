@@ -1,10 +1,11 @@
-.promo.promo--inner{
+.promo.promo-inner{
 
 	.promo-banner{
 		margin-top: 25px;padding-top: 40px; padding-bottom: 50px;
 		row-gap:80px;
-		min-height: 630px;
-		
+		min-height: 623px;
+		display: flex;
+		flex-direction: column;
 		
 		@media (max-width: 1439px) {
 			min-height: 440px;
@@ -16,8 +17,8 @@
 			row-gap:20px;
 			padding: 30px;
 		}
-		@media (max-width: 991px) {
-			min-height: 630px;
+		@media (max-width: 767px) {
+			min-height: 620px;
 		}
 		@media (max-width: 599px) {
 			margin-top: 20px;
@@ -27,7 +28,7 @@
 	}
 	
 	.promo-title{
-		width: min(1180px, 100%);
+		width: min(1180px, 65%);
 		margin-bottom: 0;
 		display: flex;
 		flex-direction: column;
@@ -38,7 +39,12 @@
 		}
 	}
 	.promo-image{
-		position: relative;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		right: 0;
+		width: 35%;
+		img{object-fit: contain;}
 		.promo-slider{
 			position: absolute;
 			bottom: 0;
@@ -47,6 +53,16 @@
 			width: 420px;
 			
 		}
+		@media (max-width: 767px) {
+		position: relative;
+		width: 100%;
+		img{
+			width: 100%;
+			height: auto;
+			max-height: 260px;
+		}
+		
+		}
 	}
 	h1{margin-bottom: 0;}
 	.subtitle{
@@ -54,6 +70,9 @@
 		font-size: 30px;
 		line-height: 1.17;
 		margin-bottom: 0;
+		@media (max-width: 1799px) {
+			font-size: 24px;
+		}
 		@media (max-width: 1439px) {
 			font-size: 18px;
 		}
@@ -62,34 +81,42 @@
 			font-size: 15px;
 		}
 	}
-	
-}
-.promo-banner.flex{
-	flex-wrap: wrap;
-	.promo-title{
-		width: 54%;
+	.promo-bottom{
+		width: fit-content;
+		margin-top: auto;
+		flex-grow: 0;
+		@media (max-width: 599px) {
+			width: 100%;
+			max-width: 300px;
+		}
 	}
-	.promo-image{width: 44%;}
-	@media (max-width: 1439px) {
-		.promo-title{width: 60%;}
-		.promo-image{width: 38%;}
+}
+// .promo-banner{
+	
+// 	.promo-title{
+// 		width: 54%;
+// 	}
+	
+// 	@media (max-width: 1439px) {
+// 		.promo-title{width: 60%;}
+// 		.promo-image{width: 38%;}
 			
 		
-	}
-	@media (max-width: 1199px) {
-		.promo-image{
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			height: 300px;
-			img{
-				width: auto;
-				height: 100%;
-			}
-		}
-		.promo-title{width: 70%;}
-	}
-	@media (max-width: 767px) {
-		.promo-title{width: 100%; max-width:350px;}
-	}
-}
+// 	}
+// 	@media (max-width: 1199px) {
+// 		.promo-image{
+// 			width: 100%;
+// 			display: flex;
+// 			justify-content: center;
+// 			height: 300px;
+// 			img{
+// 				width: auto;
+// 				height: 100%;
+// 			}
+// 		}
+// 		.promo-title{width: 70%;}
+// 	}
+// 	@media (max-width: 767px) {
+// 		.promo-title{width: 100%; max-width:350px;}
+// 	}
+// }
