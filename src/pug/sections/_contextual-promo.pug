@@ -1,4 +1,4 @@
-section.promo.promo--service
+section.promo.promo--inner
 	.container
 		.breadcrumbs
 			ul
@@ -12,7 +12,48 @@ section.promo.promo--service
 			//=== title block ===
 			.promo-title
 				h1.h1 Контекстная реклама
-				p.subtitle Выведем ваш сайт в ТОП по нужным запросам в Яндекс и Google.<br> Результат по SEO в первый месяц работ. Закажите #[strong  бесплатный аудит сайта]
+				p.subtitle Настройка<br>и ведение:<br>от 150 000 руб.
+			
+			.promo-image
+				img(src="./img/promo-bg.webp", srcset="./img/promo-bg@2x.webp 2x" alt="img" width="535" height="400")
+				//===== slider ====
+				.promo-slider.swiper
+					.swiper-wrapper
+						//===single slide ===
+						.swiper-slide
+							.promo-slider-card
+								.promo-slider__img
+									img.wh-100(src="./img/team-slider/max.webp", width="55" height="55" alt="img")
+								.promo-slider__text
+									p.txt-20 Максим / TBC
+									p “Глеб Савов и его команда эффективно выстроили стратегию продвижения нашего сайта, обеспечив выгодные позиции в поисковых системах.”
+						//===single slide ===
+						.swiper-slide
+							.promo-slider-card
+								.promo-slider__img
+									img.wh-100(src="./img/team-slider/dmitr.webp", width="55" height="55" alt="img")
+								.promo-slider__text
+									p.txt-20 Дмитрий / Акваинжиниринг
+									p “Помогли увеличить количество клиентов, привлечь новых партнеров и укрепить позиции компании как надежного и профессионального поставщика.”
+						//===single slide ===
+						.swiper-slide
+							.promo-slider-card
+								.promo-slider__img
+									img.wh-100(src="./img/team-slider/roman.webp", width="55" height="55" alt="img")
+								.promo-slider__text
+									p.txt-20 Роман / МРТ ПЛЮС
+									p “Разработали и реализовали комплексную маркетинговую стратегию. Повысили узнаваемость нашего бренда и рентабельность инвестиций в рекламу.”
+						//===single slide ===
+						.swiper-slide
+							.promo-slider-card
+								.promo-slider__img
+									img.wh-100(src="./img/team-slider/andr.webp", width="55" height="55" alt="img")
+								.promo-slider__text
+									p.txt-20 Андрей / Формула камня
+									p “Глеб с командой используют современные инструменты, работают с разными каналами коммуникации, проводят регулярный анализ и оптимизацию рекламных кампаний.”
+			
+					.promo-slider-pagination
+			
 			//====bottom row ====
 			.promo-bottom.flex
 				button.btn-accent Подать заявку

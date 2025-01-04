@@ -1,9 +1,13 @@
-.promo.promo--service{
+.promo.promo--inner{
 
 	.promo-banner{
 		margin-top: 25px;padding-top: 40px; padding-bottom: 50px;
 		row-gap:80px;
+		min-height: 630px;
+		
+		
 		@media (max-width: 1439px) {
+			min-height: 440px;
 			row-gap:40px;
 			padding: 30px;
 			row-gap:40px;
@@ -11,6 +15,9 @@
 		@media (max-width: 1199px) {
 			row-gap:20px;
 			padding: 30px;
+		}
+		@media (max-width: 991px) {
+			min-height: 630px;
 		}
 		@media (max-width: 599px) {
 			margin-top: 20px;
@@ -30,10 +37,20 @@
 			
 		}
 	}
-	
+	.promo-image{
+		position: relative;
+		.promo-slider{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 2;
+			width: 420px;
+			
+		}
+	}
 	h1{margin-bottom: 0;}
 	.subtitle{
-		max-width: 670px;
+		width: 33ch;
 		font-size: 30px;
 		line-height: 1.17;
 		margin-bottom: 0;
@@ -60,20 +77,19 @@
 		
 	}
 	@media (max-width: 1199px) {
-		.promo-title, .promo-image{
+		.promo-image{
 			width: 100%;
 			display: flex;
 			justify-content: center;
+			height: 300px;
 			img{
 				width: auto;
 				height: 100%;
 			}
 		}
-		.promo-image{height: 300px;}
+		.promo-title{width: 70%;}
 	}
 	@media (max-width: 767px) {
-		.promo-image{
-			height: 180px;
-		}
+		.promo-title{width: 100%; max-width:350px;}
 	}
 }

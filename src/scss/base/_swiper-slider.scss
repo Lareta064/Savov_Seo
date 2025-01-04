@@ -63,3 +63,17 @@
 	fill: transparent;
 	color:#3C3D3D;
 }
+.promo-slider-pagination{
+	padding-left: 67px;
+	margin-top: 20px;
+	.swiper-pagination-bullet{
+		width: 10px;
+		height: 10px;
+		opacity: 1;
+		bottom: 0;
+		background: #78797B;
+		&-active{
+			background: #A4A6A9;
+		}
+	}
+}

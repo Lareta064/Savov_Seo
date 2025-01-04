@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const promoSwiper = new Swiper('.promo-slider', {
+        speed: 800,
+        spaceBetween:20,
+        pagination: {
+            el: ".promo-slider-pagination",
+			clickable: true,
+        },
+    });
     const resultSlider = new Swiper('.result-slider', {
         
         speed: 800,
