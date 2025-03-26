@@ -130,8 +130,11 @@
 		}
 	}
 	&__list li +li{border-top: 1px solid white;}
+	@media (max-width: 1439px) {
+		padding: 14px;
+		font-size: 12px;
+	}
 	@media (max-width: 1023px) {
-	  padding: 14px;
 	  padding: 10px;
 	  font-size: 10px;
 	}

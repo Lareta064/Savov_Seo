@@ -158,20 +158,16 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color:white;
 }
 main{
-  padding-bottom: 120px;
+  
   display: flex;
   flex-direction: column;
   
   &>*{width: 100%;}
-  // &>* +*{margin-top: 100px;}
-  @media (max-width: 767px) {
-    padding-bottom: 60px;
-    
-  }
+  
 }
 .inner-main{
   row-gap: 140px;
-  padding-bottom: 190px;
+  
   background-image: url('../img/logo-bg.svg');
   background-repeat: no-repeat;
   background-size: 29%;
@@ -180,18 +176,18 @@ main{
   }
   @media (max-width: 1919px) {
     row-gap: 100px;
-    padding-bottom: 140px;
+   
   }
   @media (max-width: 1439px) {
     row-gap: 80px;
-    padding-bottom: 80px;
+    
   }
   @media (max-width: 1199px) {
     background-image:none;
   }
   @media (max-width: 767px) {
     row-gap: 60px;
-    padding-bottom: 60px;
+   
   }
 }
 .page-column{

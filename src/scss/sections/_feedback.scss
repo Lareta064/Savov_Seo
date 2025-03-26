@@ -1,26 +1,56 @@
-.feedback-content{
-	width: min(730px, 77.5%);
-	margin-inline: auto;
-}
+
 .feedback{
 	position: relative;
-	.title{ margin-bottom: 240px;}
-	.container{position: relative;
+	padding-bottom: 240px;
+	background-image: url('../img/form-bg-new.webp');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size:contain;
+	
+	.title{ 
+		margin-bottom: 3.4em;
+		text-align: center; 
+		max-width: 1400px;
+		
 	}
-	.feedback-bg{
-		position: absolute;
-		width: 80%;
-		aspect-ratio: 226 / 187;
-		left: 50%;
-		top:0;
-		max-width: 1130px;
+	.modal-frame-content{
+		width: min(730px, 77.5%);
 		margin-inline: auto;
-		transform: translate(-50%, 25%);
+		
+		@media (max-width: 1919px) {
+			width: 640px;
+		}
+		@media (max-width: 1439px) {
+			width: 540px;
+			.btn-primary{
+				padding-left: 30px;
+				padding-right: 30px;
+				font-size: 13px;
+			}
+		}
+		@media (max-width: 767px) {
+		  width: 100%;
+		  max-width: 310px;
+		}
+	}
+	
+	@media (max-width: 1919px) {
+		padding-bottom: 140px;
+	}
+	@media (max-width: 1439px) {
+		padding-bottom: 100px;
+	}
+	@media (max-width: 1199px) {
+		padding-bottom: 80px;
 	}
 	@media (max-width: 1023px) {
+		padding-bottom: 60px;
 		.title{ margin-bottom: 40px;}
 		.feedback-bg{
 			width: 100%;
 		}
+	}
+	@media (max-width: 575px) {
+	background-size:150%
 	}
 }

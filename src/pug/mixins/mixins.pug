@@ -21,7 +21,7 @@ mixin info-card-ui(title, txt, icon, iconW, iconH)
 mixin flex-card(img, title, text)
 	.flex-card
 		.flex-card__img
-			img.wh-100(src="./img/techno-logo/t"+img+".webp", srcset="./img/techno-logo/t"+img+"@2x.webp 2x" width="70" height="70" alt="img")
+			img.wh-100(src="./img/techno-logo/t"+img+".webp", loading="lazy" srcset="./img/techno-logo/t"+img+"@2x.webp 2x" width="70" height="70" alt="img")
 		.flex-card__text
 			.card-title !{title}
 			.card-text
