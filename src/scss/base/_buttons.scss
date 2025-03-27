@@ -47,8 +47,16 @@
 }
 .btn-outline{
 	background-color: transparent;
-	color: white;
+	color: #eee;
 	border:1px solid currentColor;
+}
+.btn-outline.bg-black{
+	background: #1d1d1d;
+	&:hover{
+		background-color:  #f98836;
+		color: #1d1d1d;
+		border-color: #f98836;
+	}
 }
 .btn-blue{
 	background: #c6dbff;

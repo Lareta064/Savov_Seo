@@ -45,4 +45,20 @@ mixin flip-card-ui(img, title, text)
 				.flip-card__title !{title}
 			.flip-card-back
 				p !{text}
+
+
+mixin techno-card(img, title, txt)
+	.techno-card
+		.techno-card__img
+			img(src='./img/techno-logo/'+img+'.webp', srcset='./img/techno-logo/'+img+'@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
+		.techno-card__txt
+			.techno-card__title !{title}
+			p  !{txt}
+mixin techno-card-ui(img, title, txt)
+	.techno-card
+		.techno-card__img
+			img(src='../img/techno-logo/'+img+'.webp', srcset='../img/techno-logo/'+img+'@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
+		.techno-card__txt
+			.techno-card__title !{title}
+			p  !{txt}
 		

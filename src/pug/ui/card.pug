@@ -34,52 +34,35 @@ html(lang="ru")
 					hr
 					h3 Технологии карточка
 					.techno-card-wrapper
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и 
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и 
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и 
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и 
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и 
-						.techno-card
-							.techno-card__img
-								img(src='../img/techno-logo/t1.webp', srcset='../img/techno-logo/t1@2x.webp 2x' width='70' height='70' loading='lazy' alt='img')
-							.techno-card__txt
-								.techno-card__title Keys So
-								p  Платформа для автоматизации работы, которая позволяет и 
+						+techno-card-ui('t1', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t2', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t3', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t4', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t5', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t6', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t7', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+						+techno-card-ui('t8', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+					pre.
+						+techno-card-ui('t1', 'Keys So', 'Платформа для автоматизации работы, которая позволяет и')
+
+					h3 Карточка тарифа
+					.tariff-plan
+						span.tariff-label
+						.tariff-plan__body
+							.tariff__name Старт
+							.tariff__list
+								.tariff__list-name Старт+
+								ul
+									li Анализ конкурентов
+									li Технические аудиты сайта
+									li Внутренняя оптимизация 
+									li Улучшение коммерческих факторов
+									li Мониторинг позиций сайта
+									li Ежемесячный отчет
 						
+						.tariff-plan__footer
+							.tariff-price 
+								span 30 000 &#8381;	
+							button.btn-outline.bg-black.w-100 Хочу
+
+							
