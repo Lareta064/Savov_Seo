@@ -8,3 +8,11 @@ $lightBorder:#4D4E4F;
 $ff: "'RF Dewi Expanded'";
 $fs: "'RF Dewi Extended'";
 $ft: 'Montserrat';
+@function remy($pxsize) {
+	@return calc(($pxsize/19.2))*1vw;
+}
+// @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+//     .promo {
+//         background-image: url(./../img/promo/promo-bg@2x.jpg);
+//     }
+// }

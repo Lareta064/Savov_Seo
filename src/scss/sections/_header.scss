@@ -27,7 +27,7 @@
 	padding-bottom: 20px;
 	padding-top: 20px;
 	border-bottom: 1px solid rgba(214, 214, 214, .4);
-	.btn{
+	.btn-outline{
 		height: 52px;
 		padding-left: 55px;
 		padding-right: 55px;
@@ -38,7 +38,7 @@
 	@media (max-width: 1199px) {
 		padding-top: 15px;
 		padding-bottom: 15px;
-		.btn{
+		.btn-outline{
 			height: 42px;
 			padding-left: 32px;
 			padding-right: 32px;
@@ -47,7 +47,7 @@
 	@media (max-width: 767px) {
 		padding-top: 10px;
 		padding-bottom: 10px;
-		.btn{display: none;}
+		.btn-outline{display: none;}
 	}
 }
 .header-container{

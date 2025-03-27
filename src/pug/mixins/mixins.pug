@@ -26,4 +26,23 @@ mixin flex-card(img, title, text)
 			.card-title !{title}
 			.card-text
 				p !{text}
+
+mixin flip-card(img, title, text)
+	.flip-card&attributes(attributes)
+		.flip-card-inner
+			.flip-card-front
+				.flip-card__icon
+					img(src="./img/"+img+".webp", srcset="./img/"+img+"@2x.webp 2x" width='100px' height='100px' loading='lazy' alt='img')
+				.flip-card__title !{title}
+			.flip-card-back
+				p !{text}
+mixin flip-card-ui(img, title, text)
+	.flip-card&attributes(attributes)
+		.flip-card-inner
+			.flip-card-front
+				.flip-card__icon
+					img(src="../img/"+img+".webp", srcset="../img/"+img+"@2x.webp 2x" width='100px' height='100px' loading='lazy' alt='img')
+				.flip-card__title !{title}
+			.flip-card-back
+				p !{text}
 		

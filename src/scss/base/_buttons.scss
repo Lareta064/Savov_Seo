@@ -1,5 +1,5 @@
 @use "var" as *;
-.btn-dark, .btn-grey, .btn-light, .btn-blue, .btn-accent, .btn-primary{
+.btn-dark, .btn-grey, .btn-light, .btn-blue, .btn-accent, .btn-primary, .btn-outline{
 	height: 64px;
 	padding-left: 46px;
 	padding-right: 46px;
@@ -44,6 +44,11 @@
 		color: white;
 		backdrop-filter: blur(10px);
 	}
+}
+.btn-outline{
+	background-color: transparent;
+	color: white;
+	border:1px solid currentColor;
 }
 .btn-blue{
 	background: #c6dbff;
