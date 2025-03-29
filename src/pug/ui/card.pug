@@ -65,6 +65,16 @@ html(lang="ru")
 								span 30 000 &#8381;	
 							button.btn-outline.bg-black.w-100 Хочу
 					
+					h3 Tariff card
+					.tariff-card
+						.tariff-card__name настройка
+						.tariff-card__price 59 000 &#8381;
+						.tariff-card__link Узнать больше 
+							svg.svg-right
+								use(href='../img/sprite.svg#svg-right')
+					
+					
+					
 					h3 Таргетинг карточка
 					.direction-card(style="background-image: url('../img/direction/vk.webp')")
 						.direction-card__title ВК Реклама
@@ -74,20 +84,7 @@ html(lang="ru")
 								use(href='../img/sprite.svg#svg-right')
 					
 					h3 Блок
-					.video-review
-						.video-review__screen
-							img(src='../img/video-review/poster.webp', srcset='../img/video-review/poster@2x.webp 2x' width='523' height='272' loading='lazy' alt='img')
-						.video-review__body.flex
-							.video-review__img
-								img.round-img(src='../img/video-review/rev1.webp' width='55' height='55' loading='lazy' alt='img')
-							.video-review__box
-								.flex
-									.video-review__title Дмитрий
-									.tag Бизнес клуб Level Up
-								
-								.video-review__txt  “Контекст может похвастаться наиболее быстрыми результатами уже в первые дни запуска. Контекст может похвастаться наиболее быстрыми результатами уже в первые дни запуска
-
-
-
-
-							
+					+videoRev(1, 'Дмитрий', 'Бизнес клуб Level Up')
+					pre.
+						+videoRev(2, 'Дмитрий', 'Бизнес клуб Level Up')
+					
