@@ -1,0 +1,40 @@
+@use "base/var" as *;
+.package-card{
+	font-size: 10px;
+	border-radius: 2.4em;
+    transition: .3s; 
+	padding: 3.4em 3.8em;
+	background: #131313;
+	color: #f9f9f9;
+	max-width: 39em;
+	height: 25.1em;
+	display: flex;
+	flex-direction: column;
+	&.active, &:hover{background: linear-gradient(180deg, #2e77f7 0%, #13346d 100%);}
+	&__name{
+		font-family: var(--second-family);
+		font-weight: 400;
+		font-size: 1.6em;
+		text-transform: uppercase;
+		color: #d6d6d6;
+		margin-bottom: .65em;
+	}
+	&__price{
+		font-weight: 700;
+		font-size: 32px;
+	}
+	&__link{
+		font-family: var(--second-family);
+		margin-top: auto;
+		margin-left: auto;
+		max-width: 6.3em;
+		font-weight: 500;
+		font-size: 2em;
+		line-height: 1.10;
+		svg{
+			width: 1.6em;
+			height: 1em;
+			vertical-align: middle;
+		}
+	}
+}
