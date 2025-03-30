@@ -11,15 +11,6 @@
 @use "sections/header";
 @use "blocks/_main-menu.scss";
 @use "blocks/_modal.scss";
-@use "blocks/_flip-card.scss";
-@use "blocks/_techno-card.scss";
-@use "blocks/_tariff-plan.scss";
-@use "blocks/_direction-card.scss";
-@use "blocks/_video-review-card.scss";
-@use "blocks/_package-card.scss";
-
-
-
 
 @use "blocks/_flex-card.scss";
 @use "sections/_promo";
@@ -43,6 +34,17 @@
 @use "sections/_review.scss";
 @use "sections/_services.scss";
 @use "sections/_feedback.scss";
+
+
+//targeting
+@use "blocks/_flip-card.scss";
+@use "blocks/_techno-card.scss";
+@use "blocks/_tariff-plan.scss";
+@use "blocks/_direction-card.scss";
+@use "blocks/_video-review-card.scss";
+@use "blocks/_package.scss";
+@use "blocks/_package-card.scss";
+@use "sections/_packages-section.scss";
 
 @use "sections/_footer";
 @use "ui/_ui-navigation.scss";
